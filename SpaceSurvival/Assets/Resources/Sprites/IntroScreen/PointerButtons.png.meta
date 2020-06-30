@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 68f88d23fcc595d4c88fcc1fac6103d5
+guid: 642df1c505dc444d591f11c02429fa6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4699938099201744425
-    second: PointerButtons_0
+      213: 649223268058989734
+    second: Button_0
   - first:
-      213: 555962448930968499
-    second: PointerButtons_1
+      213: -9000188618666376746
+    second: Button_1
   - first:
-      213: -6542163597855895162
-    second: PointerButtons_2
+      213: 8467241744927558709
+    second: Button_2
+  - first:
+      213: 1566552715412073297
+    second: Button_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -96,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PointerButtons_0
+      name: Button_0
       rect:
         serializedVersion: 2
         x: 1
@@ -104,20 +107,20 @@ TextureImporter:
         width: 8
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d161ca333776ceb0800000000000000
-      internalID: -4699938099201744425
+      spriteID: 6a403906f11820900800000000000000
+      internalID: 649223268058989734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PointerButtons_1
+      name: Button_1
       rect:
         serializedVersion: 2
         x: 17
@@ -125,23 +128,44 @@ TextureImporter:
         width: 8
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b39cf4d6ec27b700800000000000000
-      internalID: 555962448930968499
+      spriteID: 6d180e8e228e81380800000000000000
+      internalID: -9000188618666376746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PointerButtons_2
+      name: Button_2
       rect:
         serializedVersion: 2
         x: 1
+        y: 4
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c04c1718fa18570800000000000000
+      internalID: 8467241744927558709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_3
+      rect:
+        serializedVersion: 2
+        x: 17
         y: 4
         width: 8
         height: 11
@@ -152,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 681de4f9ed09535a0800000000000000
-      internalID: -6542163597855895162
+      spriteID: 15b6f0c05638db510800000000000000
+      internalID: 1566552715412073297
       vertices: []
       indices: 
       edges: []
