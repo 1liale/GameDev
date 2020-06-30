@@ -401,6 +401,8 @@ GameObject:
   m_Component:
   - component: {fileID: 436578606}
   - component: {fileID: 436578605}
+  - component: {fileID: 436578607}
+  - component: {fileID: 436578608}
   m_Layer: 0
   m_Name: Jupiter
   m_TagString: Untagged
@@ -472,6 +474,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &436578607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436578604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e147ab6a31eb54172a64ac6574da3f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 436578606}
+  Time: 2.5
+  Amplitude: 15
+--- !u!114 &436578608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436578604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 436578606}
+  amplitude: 0.04
+  time: 5
 --- !u!1 &443886992
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +755,7 @@ GameObject:
   - component: {fileID: 573825248}
   - component: {fileID: 573825247}
   - component: {fileID: 573825246}
+  - component: {fileID: 573825249}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -813,6 +846,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573825249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573825245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e021811367fb64c6eae654c696907b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 573825248}
+  BobAmplitude: 0.02
+  RotationAmplitude: 1
+  BobTime: 5
+  RotationTime: 2.5
 --- !u!1 &690073931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1518558286}
   - component: {fileID: 1518558285}
+  - component: {fileID: 1518558288}
+  - component: {fileID: 1518558287}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -1531,6 +1583,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518558287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518558284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e147ab6a31eb54172a64ac6574da3f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1518558286}
+  Time: 3
+  Amplitude: 5
+--- !u!114 &1518558288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518558284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1518558286}
+  amplitude: 0.005
+  time: 3
 --- !u!1 &1770268838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1705,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1865643340}
   - component: {fileID: 1865643339}
+  - component: {fileID: 1865643342}
+  - component: {fileID: 1865643341}
   m_Layer: 0
   m_Name: Mars
   m_TagString: Untagged
@@ -1694,6 +1778,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865643341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865643338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e147ab6a31eb54172a64ac6574da3f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1865643340}
+  Time: 3
+  Amplitude: 10
+--- !u!114 &1865643342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865643338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1865643340}
+  amplitude: 0.02
+  time: 4
 --- !u!1 &2059320952
 GameObject:
   m_ObjectHideFlags: 0
