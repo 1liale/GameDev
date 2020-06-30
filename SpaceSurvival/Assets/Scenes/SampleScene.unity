@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 198737758}
-  amplitude: 0.01
+  amplitude: 0.02
   time: 7
 --- !u!1 &519420028
 GameObject:
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: {fileID: 1458662997}
   amplitude: 0.02
-  time: 5
+  time: 4
 --- !u!1 &1700574516
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 1700574519}
   - component: {fileID: 1700574518}
   - component: {fileID: 1700574517}
+  - component: {fileID: 1700574520}
   m_Layer: 0
   m_Name: Space Suit_ Idle_3
   m_TagString: Untagged
@@ -581,6 +582,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1700574520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700574516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a32c2f9498cb424e95804cfa51fe165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.4
+  gap: 0.5
+  animator: {fileID: 0}
 --- !u!1 &1921789321
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: {fileID: 1921789322}
   amplitude: 0.05
-  time: 6
+  time: 5
 --- !u!1 &2081776104
 GameObject:
   m_ObjectHideFlags: 0
