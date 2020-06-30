@@ -2176,10 +2176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 1281916511}
-  BobAmplitude: 0.5
-  RotationAmplitude: 5
-  BobTime: 6
-  RotationTime: 3
+  BobAmplitude: 0.05
+  RotationAmplitude: -2.5
+  BobTime: 8
+  RotationTime: 24
 --- !u!1 &1291842151
 GameObject:
   m_ObjectHideFlags: 0
