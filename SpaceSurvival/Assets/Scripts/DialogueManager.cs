@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     public void LoadDialogue(Dialogue dialogue)
     {
         this.dialogue = dialogue;
-        dialogue.Reset();
+        playDialogue = false;
     }
 
     void Update()
