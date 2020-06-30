@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198737758}
   - component: {fileID: 198737759}
+  - component: {fileID: 198737760}
   m_Layer: 0
   m_Name: parallax-space-stars
   m_TagString: Untagged
@@ -202,6 +203,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &198737760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198737757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 198737758}
+  amplitude: 0.01
+  time: 7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1458662997}
   - component: {fileID: 1458662998}
+  - component: {fileID: 1458662999}
   m_Layer: 0
   m_Name: parallax-space-ring-planet
   m_TagString: Untagged
@@ -447,6 +464,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1458662999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458662996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1458662997}
+  amplitude: 0.02
+  time: 5
 --- !u!1 &1770169952
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  gap: 0.5
   animator: {fileID: 0}
 --- !u!4 &1770169954
 Transform:
@@ -502,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921789322}
   - component: {fileID: 1921789323}
+  - component: {fileID: 1921789324}
   m_Layer: 0
   m_Name: parallax-space-big-planet
   m_TagString: Untagged
@@ -573,6 +607,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1921789324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921789321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ad48c09e7bb4112a9f092557b318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 1921789322}
+  amplitude: 0.05
+  time: 6
 --- !u!1 &2081776104
 GameObject:
   m_ObjectHideFlags: 0
