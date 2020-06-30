@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: f49f9f0a6696c4aeb97a68525f9a2f97
+guid: 867a7990e9fd04f89ab3487d1b99e5c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -803952859076711170
-    second: Space Suit_ Idle_0
+      213: 8079114014289701239
+    second: SpaceSuitIdle_0
   - first:
-      213: -413053220713515334
-    second: Space Suit_ Idle_1
+      213: -693263821905167161
+    second: SpaceSuitIdle_1
   - first:
-      213: -3415885563938708001
-    second: Space Suit_ Idle_2
+      213: -8620034036332209997
+    second: SpaceSuitIdle_2
   - first:
-      213: -3229321165291894507
-    second: Space Suit_ Idle_3
+      213: -5240756960506789390
+    second: SpaceSuitIdle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Space Suit_ Idle_0
+      name: SpaceSuitIdle_0
       rect:
         serializedVersion: 2
         x: 20
@@ -113,14 +113,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efca29a5229c7d4f0800000000000000
-      internalID: -803952859076711170
+      spriteID: 7792e991467ce1070800000000000000
+      internalID: 8079114014289701239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Suit_ Idle_1
+      name: SpaceSuitIdle_1
       rect:
         serializedVersion: 2
         x: 84
@@ -134,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab63a02c84a844af0800000000000000
-      internalID: -413053220713515334
+      spriteID: 7cc76bf1a380166f0800000000000000
+      internalID: -693263821905167161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Suit_ Idle_2
+      name: SpaceSuitIdle_2
       rect:
         serializedVersion: 2
         x: 20
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd56c008d265890d0800000000000000
-      internalID: -3415885563938708001
+      spriteID: 3b854a007bc7f5880800000000000000
+      internalID: -8620034036332209997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Space Suit_ Idle_3
+      name: SpaceSuitIdle_3
       rect:
         serializedVersion: 2
         x: 84
@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 519402582852f23d0800000000000000
-      internalID: -3229321165291894507
+      spriteID: 2f146d6af471547b0800000000000000
+      internalID: -5240756960506789390
       vertices: []
       indices: 
       edges: []
