@@ -1,11 +1,52 @@
-﻿using System.Collections.Generic;
+﻿using System.IO;
 using UnityEngine;
-using System.IO;
 
 public class PlayerStats : MonoBehaviour
 {
+    public enum Level { Base, First, Second, Third };
 
-    string path = "Assets/Script/GameData.txt";
+    public float Food { get; private set; }
+    public float Energy { get; private set; }
+    public float Vitality { get; private set; }
+
+    public float Trust { get; private set; }
+    public float Morality { get; private set; }
+
+    public Level LvlHealthSci { get; private set; }
+    public Level LvlEngineer { get; private set; }
+    public Level LvlComputerSci { get; private set; }
+    public Level LvlNews { get; private set; }
+
+    public Level LvlStrength { get; private set; }
+    public Level LvlEndurance { get; private set; }
+
+    private float rtFoodDec;
+    private float rtEnergyDec;
+    private float rtVitalityInc;
+    private float rtVitalityDec;
+
+    void Start()
+    {
+        Food = 1f;
+        Energy = 1f;
+        Vitality = 1f;
+    }
+
+    void Update()
+    {
+        Food -= rtFoodDec * Time.deltaTime;
+        Food = Mathf.Clamp(Food, 0f, 1f);
+
+        Energy -= rtEnergyDec * Time.deltaTime / 
+            Mathf.Max(Mathf.Sqrt(Food), 0.01f);
+        Energy = Mathf.Clamp(Energy, 0f, 1f);
+
+        Vitality += rtVitalityInc * Time.deltaTime;
+        Vitality -= rtVitalityDec * Time.deltaTime /
+            Mathf.Max(Mathf.Sqrt(Food), 0.01f) / 
+            Mathf.Max(Mathf.Sqrt(Energy), 0.01f);
+        Vitality = Mathf.Clamp(Vitality, 0f, 1f);
+    }
 
     static void WriteString()
     {
