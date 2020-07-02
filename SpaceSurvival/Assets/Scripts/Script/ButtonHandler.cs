@@ -18,10 +18,31 @@ public class ButtonHandler : MonoBehaviour
         pointer1.GetComponent<SpriteRenderer>().enabled = false;
     }
 
+    public void onSwipe()
+    {
+        pointer1.GetComponent<SpriteRenderer>().enabled = false;
+        pointer2.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void offSwipe()
+    {
+        pointer1.GetComponent<SpriteRenderer>().enabled = true;
+        pointer2.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
     public void onClick()
     {
         pointer1.GetComponent<SpriteRenderer>().enabled = false;
         pointer2.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    public void swipeLeft()
+    {
+        
+    }
+    public void swipeRight()
+    {
+        
     }
 
     public void playGame()
