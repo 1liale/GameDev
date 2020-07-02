@@ -13,6 +13,7 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // characterName = new NameDisplay();
         characterName = FindObjectOfType<NameDisplay>();
         characterName.setName(names[curSelect]);
         for(int i = 1; i < characters.Length; i++)

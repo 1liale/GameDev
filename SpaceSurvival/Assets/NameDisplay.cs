@@ -11,10 +11,10 @@ public class NameDisplay : MonoBehaviour
     void Start () 
     {
         txt = gameObject.GetComponent<Text>(); 
-        txt.text="Hello";
+        txt.text="Veteran";
     }
     public void setName(string str)
     {
-        txt.text = "Hello";
+        txt.text = str;
     }
 }
