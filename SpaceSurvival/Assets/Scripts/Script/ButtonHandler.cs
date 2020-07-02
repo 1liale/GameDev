@@ -24,6 +24,15 @@ public class ButtonHandler : MonoBehaviour
         pointer2.GetComponent<SpriteRenderer>().enabled = true;
     }
 
+    public void swipeLeft()
+    {
+        
+    }
+    public void swipeRight()
+    {
+        
+    }
+
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
