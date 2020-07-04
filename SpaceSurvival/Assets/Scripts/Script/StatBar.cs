@@ -15,6 +15,6 @@ public class StatBar : MonoBehaviour
 
     public void setValue(float value)
     {
-        slider.value = (int)(value * 100);
+        slider.value = value;
     }
 }

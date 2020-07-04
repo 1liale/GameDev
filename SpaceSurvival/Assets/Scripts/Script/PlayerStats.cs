@@ -20,6 +20,10 @@ public class PlayerStats : MonoBehaviour
     public Level LvlStrength { get; private set; }
     public Level LvlEndurance { get; private set; }
 
+    public StatBar foodBar;
+    public StatBar energyBar;
+    public StatBar vitalityBar;
+
     private float rtFoodDec;
     private float rtEnergyDec;
     private float rtVitalityInc;
@@ -46,6 +50,10 @@ public class PlayerStats : MonoBehaviour
             Mathf.Max(Mathf.Sqrt(Food), 0.01f) / 
             Mathf.Max(Mathf.Sqrt(Energy), 0.01f);
         Vitality = Mathf.Clamp(Vitality, 0f, 1f);
+
+        foodBar.setValue(Food);
+        energyBar.setValue(Energy);
+        vitalityBar.setValue(Vitality);
     }
 
     static void WriteString()
