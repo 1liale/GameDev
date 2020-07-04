@@ -8,7 +8,7 @@ public class PlayerStatsController : MonoBehaviour
     public int maxFood = 100;
     public int currentFood;
 
-    public Foodbar Foodbar;
+    public StatBar Foodbar;
 
     // Start is called before the first frame update
     void Start()

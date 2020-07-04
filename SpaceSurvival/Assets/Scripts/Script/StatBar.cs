@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatBar2 : MonoBehaviour
+public class StatBar : MonoBehaviour
 {
-
     public Slider slider;
 
     public void setMax(int value)
