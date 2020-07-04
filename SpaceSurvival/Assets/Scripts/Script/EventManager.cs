@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public event Action oxygenLeak;
-    public event Action dispenserMalfunc;
+    public event Action OxygenLeak;
+    public event Action DispenserMalfunc;
 
     // Start is called before the first frame update
     void Start()
