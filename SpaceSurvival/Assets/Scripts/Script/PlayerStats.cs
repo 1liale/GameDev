@@ -24,10 +24,10 @@ public class PlayerStats : MonoBehaviour
     public StatBar energyBar;
     public StatBar vitalityBar;
 
-    private float rtFoodDec;
-    private float rtEnergyDec;
-    private float rtVitalityInc;
-    private float rtVitalityDec;
+    private float rtFood;
+    private float rtEnergy;
+    private float rtVitality;
+    private float rtHeal;
 
     void Start()
     {
@@ -38,15 +38,15 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        Food -= rtFoodDec * Time.deltaTime;
+        Food -= rtFood * Time.deltaTime;
         Food = Mathf.Clamp(Food, 0f, 1f);
 
-        Energy -= rtEnergyDec * Time.deltaTime / 
+        Energy -= rtEnergy * Time.deltaTime / 
             Mathf.Max(Mathf.Sqrt(Food), 0.01f);
         Energy = Mathf.Clamp(Energy, 0f, 1f);
 
-        Vitality += rtVitalityInc * Time.deltaTime;
-        Vitality -= rtVitalityDec * Time.deltaTime /
+        Vitality += rtHeal * Time.deltaTime;
+        Vitality -= rtVitality * Time.deltaTime /
             Mathf.Max(Mathf.Sqrt(Food), 0.01f) / 
             Mathf.Max(Mathf.Sqrt(Energy), 0.01f);
         Vitality = Mathf.Clamp(Vitality, 0f, 1f);
