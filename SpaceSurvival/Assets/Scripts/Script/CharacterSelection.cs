@@ -9,13 +9,22 @@ public class CharacterSelection : MonoBehaviour
     public string[] names;
     private int curSelect = 0;
 
-    NameDisplay characterName;
+    private TypeEffect display;
+
+    private NameDisplay characterName;
+
+    DialogueManager description; 
+    private string[] curDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
-        // characterName = new NameDisplay();
         characterName = FindObjectOfType<NameDisplay>();
+        description = FindObjectOfType<DialogueManager>();
+        displayDescription();
+
         characterName.setName(names[curSelect]);
+
         for(int i = 1; i < characters.Length; i++)
         {
             characters[i].GetComponent<SpriteRenderer>().enabled = false;
@@ -33,6 +42,7 @@ public class CharacterSelection : MonoBehaviour
         
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
+        displayDescription();
     }
 
     public void switchRight()
@@ -46,5 +56,16 @@ public class CharacterSelection : MonoBehaviour
 
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
+        displayDescription();
+    }
+
+    private void displayDescription()
+    {
+        curDisplay = description.getDescription(curSelect);
+        display = FindObjectOfType<TypeEffect>();
+        //foreach(string str in curDisplay)
+        //{
+            display.beginType("Hello");
+        //}
     }
 }

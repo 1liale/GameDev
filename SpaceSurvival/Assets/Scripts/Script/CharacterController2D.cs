@@ -6,7 +6,6 @@ public class CharacterController2D : MonoBehaviour
 {					
 	public float speed = 0.4f;
 
-	public float gap = 0.5f;
 	private int moveRight = 0;
 	private bool isWalking = false;
 	private bool facingRight = false;
@@ -74,7 +73,6 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 	
-
 	void FixedUpdate()
 	{
 
