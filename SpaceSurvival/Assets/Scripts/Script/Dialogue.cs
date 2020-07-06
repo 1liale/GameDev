@@ -22,10 +22,11 @@ public class Dialogue
             lines = new Tuple<string, string>[strLines.Length];
             for (int i = 0; i < strLines.Length; ++i)
             {
-                string line = strLines[i].Split('@')[1];
+                string text = strLines[i].Contains("@") ? 
+                    strLines[i].Split('@')[1] : strLines[i];
                 string name = strLines[i].Contains("@") ? 
                     strLines[i].Split('@')[0] : lines[i - 1].Item1;
-                lines[i] = new Tuple<string, string>(name, line);
+                lines[i] = new Tuple<string, string>(name, text);
             }
 
         }
@@ -36,7 +37,7 @@ public class Dialogue
     {
         if (index >= lines.Length)
             return null;
-        return lines[++index];
+        return lines[index++];
     }
 
 }

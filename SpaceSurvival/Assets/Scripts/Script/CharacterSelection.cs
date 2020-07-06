@@ -60,11 +60,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void displayDescription()
     {
-        //curDisplay = description.getDescription(curSelect);
-        display = FindObjectOfType<TypeEffect>();
-        //foreach(string str in curDisplay)
-        //{
-            display.beginType("Hello");
-        //}
+        dialogueManager.LoadDialogue("CharSelection", curSelect);
+        dialogueManager.SetPlay(true);
     }
 }

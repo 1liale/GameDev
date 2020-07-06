@@ -19,6 +19,13 @@ public class DialogueManager : MonoBehaviour
         dialogue.Reset();
     }
 
+    public void LoadDialogue(string txtFile, int index)
+    {
+        dialogue = new Dialogue();
+        dialogue.Load(txtFile, index);
+        dialogue.Reset();
+    }
+
     void Start()
     {
         display = FindObjectOfType<TypeEffect>();
@@ -28,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!playDialogue) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             Tuple<string, string> line = dialogue.NextLine();
             if (line != null)
@@ -36,7 +43,7 @@ public class DialogueManager : MonoBehaviour
                 string name = line.Item1;
                 string text = line.Item2;
                 // display
-
+                display.beginType(text);
             }
         }
     }
