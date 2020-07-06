@@ -9,37 +9,36 @@ public class CharacterSelection : MonoBehaviour
     public string[] names;
     private int curSelect = 0;
 
-    private TypeEffect display;
+    //private TypeEffect display;
 
     private NameDisplay characterName;
 
-    DialogueManager description; 
-    private string[] curDisplay;
+    DialogueManager dialogueManager;
 
     // Start is called before the first frame update
     void Start()
     {
         characterName = FindObjectOfType<NameDisplay>();
-        description = FindObjectOfType<DialogueManager>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
         displayDescription();
 
         characterName.setName(names[curSelect]);
 
-        for(int i = 1; i < characters.Length; i++)
+        for (int i = 1; i < characters.Length; i++)
         {
             characters[i].GetComponent<SpriteRenderer>().enabled = false;
-        } 
+        }
     }
 
     public void switchLeft()
     {
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;
 
-        if(curSelect - 1 >= 0)
+        if (curSelect - 1 >= 0)
             curSelect -= 1;
         else
             curSelect = characters.Length - 1;
-        
+
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
         displayDescription();
@@ -49,7 +48,7 @@ public class CharacterSelection : MonoBehaviour
     {
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;
 
-        if(curSelect + 1 == characters.Length)
+        if (curSelect + 1 == characters.Length)
             curSelect = 0;
         else
             curSelect += 1;
@@ -61,11 +60,8 @@ public class CharacterSelection : MonoBehaviour
 
     private void displayDescription()
     {
-        curDisplay = description.getDescription(curSelect);
-        display = FindObjectOfType<TypeEffect>();
-        //foreach(string str in curDisplay)
-        //{
-            display.beginType("Hello");
-        //}
+        Debug.Log(curSelect);
+        dialogueManager.LoadDialogue("CharSelection", curSelect);
+        dialogueManager.SetPlay(true);
     }
 }

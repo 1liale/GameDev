@@ -6,10 +6,7 @@ public class DialogueManager : MonoBehaviour
     private Dialogue dialogue;
     private bool playDialogue;
 
-    private string txtFile = "CharSelection";
-    string txtContent;
-
-    private string[] sections;
+    private TypeEffect display;
 
     public void SetPlay(bool playDialogue)
     {
@@ -22,36 +19,32 @@ public class DialogueManager : MonoBehaviour
         dialogue.Reset();
     }
 
+    public void LoadDialogue(string txtFile, int index)
+    {
+        dialogue = new Dialogue();
+        dialogue.Load(txtFile, index);
+        dialogue.Reset();
+    }
+
+    void Start()
+    {
+        display = FindObjectOfType<TypeEffect>();
+    }
+
     void Update()
     {
         if (!playDialogue) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            Tuple<string, string> line = dialogue.nextLine();
+            Tuple<string, string> line = dialogue.NextLine();
             if (line != null)
             {
                 string name = line.Item1;
                 string text = line.Item2;
                 // display
-
+                display.beginType(text);
             }
         }
-    }
-
-    public string[] getDescription(int option)
-    {
-        string[] curLines = sections[option].Split('\n');
-        Debug.Log("split worked");
-        return curLines;
-    }
-
-    // Reads from CharSelect.txt 
-    private void loadSelectDialogue()
-    {
-        TextAsset txtAssets = Resources.Load(txtFile) as TextAsset;  
-        txtContent = txtAssets.ToString();
-        sections = txtContent.Split('%');
-        Debug.Log(sections[0]);
     }
 }
