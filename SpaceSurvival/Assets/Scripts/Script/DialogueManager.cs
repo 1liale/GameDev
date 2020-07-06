@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
 
     public string[] getDescription(int option)
     {
+        loadSelectDialogue();
         string[] curLines = sections[option].Split('\n');
         Debug.Log("split worked");
         return curLines;
