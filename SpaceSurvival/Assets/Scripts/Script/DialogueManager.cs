@@ -47,21 +47,4 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-    
-    /*public string[] getDescription(int option)
-    {
-        loadSelectDialogue();
-        string[] curLines = sections[option].Split('\n');
-        Debug.Log("split worked");
-        return curLines;
-    }
-
-    // Reads from CharSelect.txt 
-    private void loadSelectDialogue()
-    {
-        TextAsset txtAssets = Resources.Load(txtFile) as TextAsset;  
-        txtContent = txtAssets.ToString();
-        sections = txtContent.Split('%');
-        Debug.Log(sections[0]);
-    }*/
 }
