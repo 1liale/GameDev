@@ -1,0 +1,97 @@
+\hypertarget{class_extras_clipper_lib_1_1_clipper}{}\doxysection{Extras\+Clipper\+Lib.\+Clipper Class Reference}
+\label{class_extras_clipper_lib_1_1_clipper}\index{ExtrasClipperLib.Clipper@{ExtrasClipperLib.Clipper}}
+Inheritance diagram for Extras\+Clipper\+Lib.\+Clipper\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_extras_clipper_lib_1_1_clipper}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_aeaffd9e0660e862b8fa98ea5c587067a}\label{class_extras_clipper_lib_1_1_clipper_aeaffd9e0660e862b8fa98ea5c587067a}} 
+{\bfseries Clipper} (int Init\+Options=0)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a6f06739266642c7f40588a8ea9d088b2}\label{class_extras_clipper_lib_1_1_clipper_a6f06739266642c7f40588a8ea9d088b2}} 
+bool {\bfseries Execute} (Clip\+Type clip\+Type, Paths solution, Poly\+Fill\+Type Fill\+Type=Poly\+Fill\+Type.\+pft\+Even\+Odd)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_ab699fa7597fb4353d8f457dc976cbe19}\label{class_extras_clipper_lib_1_1_clipper_ab699fa7597fb4353d8f457dc976cbe19}} 
+bool {\bfseries Execute} (Clip\+Type clip\+Type, \mbox{\hyperlink{class_extras_clipper_lib_1_1_poly_tree}{Poly\+Tree}} polytree, Poly\+Fill\+Type Fill\+Type=Poly\+Fill\+Type.\+pft\+Even\+Odd)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_afb25c11021b4d6a8f507e3abb5830655}\label{class_extras_clipper_lib_1_1_clipper_afb25c11021b4d6a8f507e3abb5830655}} 
+bool {\bfseries Execute} (Clip\+Type clip\+Type, Paths solution, Poly\+Fill\+Type subj\+Fill\+Type, Poly\+Fill\+Type clip\+Fill\+Type)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_ad60de5feecbe2d1dacf0cf053cd07102}\label{class_extras_clipper_lib_1_1_clipper_ad60de5feecbe2d1dacf0cf053cd07102}} 
+bool {\bfseries Execute} (Clip\+Type clip\+Type, \mbox{\hyperlink{class_extras_clipper_lib_1_1_poly_tree}{Poly\+Tree}} polytree, Poly\+Fill\+Type subj\+Fill\+Type, Poly\+Fill\+Type clip\+Fill\+Type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a13abbf75a00f6a0d5f8507e91a4b0b19}\label{class_extras_clipper_lib_1_1_clipper_a13abbf75a00f6a0d5f8507e91a4b0b19}} 
+static void {\bfseries Reverse\+Paths} (Paths polys)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a41652817c3eb4e01b31bb810b40fb80a}\label{class_extras_clipper_lib_1_1_clipper_a41652817c3eb4e01b31bb810b40fb80a}} 
+static bool {\bfseries Orientation} (Path poly)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a2817269ac398e54e76fdd111938e6d13}\label{class_extras_clipper_lib_1_1_clipper_a2817269ac398e54e76fdd111938e6d13}} 
+static int {\bfseries Point\+In\+Polygon} (\mbox{\hyperlink{struct_extras_clipper_lib_1_1_int_point}{Int\+Point}} pt, Path path)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a0c2faf6edb7bce9566f8d12a6d3d08b2}\label{class_extras_clipper_lib_1_1_clipper_a0c2faf6edb7bce9566f8d12a6d3d08b2}} 
+static double {\bfseries Area} (Path poly)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a000cbef1bbc0dda09a66a4b874551e5e}\label{class_extras_clipper_lib_1_1_clipper_a000cbef1bbc0dda09a66a4b874551e5e}} 
+static Paths {\bfseries Simplify\+Polygon} (Path poly, Poly\+Fill\+Type fill\+Type=Poly\+Fill\+Type.\+pft\+Even\+Odd)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a56d743a24b493dbba884fed8c321a8ee}\label{class_extras_clipper_lib_1_1_clipper_a56d743a24b493dbba884fed8c321a8ee}} 
+static Paths {\bfseries Simplify\+Polygons} (Paths polys, Poly\+Fill\+Type fill\+Type=Poly\+Fill\+Type.\+pft\+Even\+Odd)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_ae707a3889c2afd2f10780ddffa14c99e}\label{class_extras_clipper_lib_1_1_clipper_ae707a3889c2afd2f10780ddffa14c99e}} 
+static Path {\bfseries Clean\+Polygon} (Path path, double distance=1.\+415)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_aaa169215f36a6b6a87eafc236e29ce72}\label{class_extras_clipper_lib_1_1_clipper_aaa169215f36a6b6a87eafc236e29ce72}} 
+static Paths {\bfseries Clean\+Polygons} (Paths polys, double distance=1.\+415)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_ad222c12c15bb70c08437451aa5515b92}\label{class_extras_clipper_lib_1_1_clipper_ad222c12c15bb70c08437451aa5515b92}} 
+static Paths {\bfseries Minkowski\+Sum} (Path pattern, Path path, bool path\+Is\+Closed)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a086ecb1eee7d41fe5ce2caba4c095fb4}\label{class_extras_clipper_lib_1_1_clipper_a086ecb1eee7d41fe5ce2caba4c095fb4}} 
+static Paths {\bfseries Minkowski\+Sum} (Path pattern, Paths paths, bool path\+Is\+Closed)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a5364b972f9fbb29f274762e1fd5ea42e}\label{class_extras_clipper_lib_1_1_clipper_a5364b972f9fbb29f274762e1fd5ea42e}} 
+static Paths {\bfseries Minkowski\+Diff} (Path poly1, Path poly2)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a1894ee3fbfd4127e84215f7bd4b94cb4}\label{class_extras_clipper_lib_1_1_clipper_a1894ee3fbfd4127e84215f7bd4b94cb4}} 
+static Paths {\bfseries Poly\+Tree\+To\+Paths} (\mbox{\hyperlink{class_extras_clipper_lib_1_1_poly_tree}{Poly\+Tree}} polytree)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a74494ddb0a7cbaa8a02bcd405da5dbfb}\label{class_extras_clipper_lib_1_1_clipper_a74494ddb0a7cbaa8a02bcd405da5dbfb}} 
+static Paths {\bfseries Open\+Paths\+From\+Poly\+Tree} (\mbox{\hyperlink{class_extras_clipper_lib_1_1_poly_tree}{Poly\+Tree}} polytree)
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_ad7555f3e4a81ecd8cc5cb18deba8fd05}\label{class_extras_clipper_lib_1_1_clipper_ad7555f3e4a81ecd8cc5cb18deba8fd05}} 
+static Paths {\bfseries Closed\+Paths\+From\+Poly\+Tree} (\mbox{\hyperlink{class_extras_clipper_lib_1_1_poly_tree}{Poly\+Tree}} polytree)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_af32e166accbd3c817ae0349e297486dd}\label{class_extras_clipper_lib_1_1_clipper_af32e166accbd3c817ae0349e297486dd}} 
+const int {\bfseries io\+Reverse\+Solution} = 1
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_abf2c46af66e0a02fe4ed810ae14b3bbc}\label{class_extras_clipper_lib_1_1_clipper_abf2c46af66e0a02fe4ed810ae14b3bbc}} 
+const int {\bfseries io\+Strictly\+Simple} = 2
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_abca82227053ebcb80c3bf62c78dddceb}\label{class_extras_clipper_lib_1_1_clipper_abca82227053ebcb80c3bf62c78dddceb}} 
+const int {\bfseries io\+Preserve\+Collinear} = 4
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a559bb1ac8c77b9eea7839066d0b8349b}\label{class_extras_clipper_lib_1_1_clipper_a559bb1ac8c77b9eea7839066d0b8349b}} 
+bool {\bfseries Reverse\+Solution}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_extras_clipper_lib_1_1_clipper_a70e9007d83c70bd974aff569a9622415}\label{class_extras_clipper_lib_1_1_clipper_a70e9007d83c70bd974aff569a9622415}} 
+bool {\bfseries Strictly\+Simple}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+2d.\+spriteshape@3.\+0.\+11/\+Samples$\sim$/\+Extras/\+Scripts/Clipper.\+cs\end{DoxyCompactItemize}

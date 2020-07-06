@@ -1,0 +1,71 @@
+\hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view}{}\doxysection{Unity\+Editor.\+U2\+D.\+Animation.\+Bone\+Tree\+View Class Reference}
+\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view}\index{UnityEditor.U2D.Animation.BoneTreeView@{UnityEditor.U2D.Animation.BoneTreeView}}
+
+
+Inherits Unity\+Editor.\+U2\+D.\+Animation.\+Visibility\+Tree\+View\+Base.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a5eb9b9548ac91f857f9fea200f190554}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a5eb9b9548ac91f857f9fea200f190554}} 
+{\bfseries Bone\+Tree\+View} (Tree\+View\+State tree\+View\+State, Multi\+Column\+Header column\+Header)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a32bb106fff6d85d2d49ecbcfac3dfcbe}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a32bb106fff6d85d2d49ecbcfac3dfcbe}} 
+void {\bfseries Setup\+Hierarchy} ()
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a058ae87e8975b9bdfff626e79747427e}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a058ae87e8975b9bdfff626e79747427e}} 
+void {\bfseries On\+Bone\+Selection\+Changed} (Skeleton\+Selection bone\+Selection)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ad9063b0851213964038243d6ca41d429}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ad9063b0851213964038243d6ca41d429}} 
+void {\bfseries On\+Bone\+Expanded\+Changed} (Bone\+Cache\mbox{[}$\,$\mbox{]} bones)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a224de062490627c0256da10a1cf62195}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a224de062490627c0256da10a1cf62195}} 
+void {\bfseries On\+Bone\+Name\+Changed} (Bone\+Cache bone)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_abe89b1e3f67fd0a14adf1b9be65c1c48}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_abe89b1e3f67fd0a14adf1b9be65c1c48}} 
+Func$<$ Bone\+Tree\+Widget\+Controller $>$ {\bfseries Get\+Controller} = () =$>$ null
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab17d9aac0ab3e226f2d5acdd862f1715}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab17d9aac0ab3e226f2d5acdd862f1715}} 
+override void {\bfseries Selection\+Changed} (I\+List$<$ int $>$ selected\+Ids)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab8e4c73a42ca4a83460ef3b811ba9a1a}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab8e4c73a42ca4a83460ef3b811ba9a1a}} 
+override void {\bfseries Expanded\+State\+Changed} ()
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab6b4f5dd2945e9994c08ea2eeb2ef0d0}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab6b4f5dd2945e9994c08ea2eeb2ef0d0}} 
+override float {\bfseries Get\+Custom\+Row\+Height} (int row, Tree\+View\+Item item)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ae7aa5b827510234bdfc24e100b41b0ef}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ae7aa5b827510234bdfc24e100b41b0ef}} 
+override Rect {\bfseries Get\+Rename\+Rect} (Rect row\+Rect, int row, Tree\+View\+Item item)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_aaac2530999564d31408b3ef7ccf94490}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_aaac2530999564d31408b3ef7ccf94490}} 
+override void {\bfseries Row\+G\+UI} (Row\+G\+U\+I\+Args args)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab6629e3544ac166795f5fc5dc858bd5b}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ab6629e3544ac166795f5fc5dc858bd5b}} 
+override Tree\+View\+Item {\bfseries Build\+Root} ()
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_af1f61b4ba998d64198327a766f93e5e5}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_af1f61b4ba998d64198327a766f93e5e5}} 
+override bool {\bfseries Can\+Rename} (Tree\+View\+Item item)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a59aa48b71925206905f0813ed2ccf5c0}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a59aa48b71925206905f0813ed2ccf5c0}} 
+override void {\bfseries Rename\+Ended} (Rename\+Ended\+Args args)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ae25234ca322160984e500b9b62636e82}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_ae25234ca322160984e500b9b62636e82}} 
+override bool {\bfseries Can\+Start\+Drag} (Can\+Start\+Drag\+Args args)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_aac7a8ba2dd6267ceb8e4bec584a1a552}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_aac7a8ba2dd6267ceb8e4bec584a1a552}} 
+override void {\bfseries Setup\+Drag\+And\+Drop} (Setup\+Drag\+And\+Drop\+Args args)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a4e4ec4f3cbe5a418660270f76ea12239}\label{class_unity_editor_1_1_u2_d_1_1_animation_1_1_bone_tree_view_a4e4ec4f3cbe5a418660270f76ea12239}} 
+override Drag\+And\+Drop\+Visual\+Mode {\bfseries Handle\+Drag\+And\+Drop} (Drag\+And\+Drop\+Args args)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+2d.\+animation@3.\+2.\+2/\+Editor/\+Skinning\+Module/\+Visibility\+Tool/Bone\+Visibility\+Tool.\+cs\end{DoxyCompactItemize}

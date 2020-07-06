@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+<summary> class <c>Bob</c> transforms objects to simulate bobbing animation </summary>
+*/
 public class Bob : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform t;
     public float amplitude;
     public float time;
@@ -13,6 +15,7 @@ public class Bob : MonoBehaviour
     private float oz;
     private float r = 0;
     private float i;
+    // Start is called before the first frame update
     void Start()
     {
         ox=t.position.x;

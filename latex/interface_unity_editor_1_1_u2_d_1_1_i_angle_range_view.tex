@@ -1,0 +1,64 @@
+\hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view}{}\doxysection{Unity\+Editor.\+U2\+D.\+I\+Angle\+Range\+View Interface Reference}
+\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view}\index{UnityEditor.U2D.IAngleRangeView@{UnityEditor.U2D.IAngleRangeView}}
+Inheritance diagram for Unity\+Editor.\+U2\+D.\+I\+Angle\+Range\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a32a2615171b9f7d1b15e60ab7e502b67}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a32a2615171b9f7d1b15e60ab7e502b67}} 
+void {\bfseries Request\+Focus\+Index} (int index)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a2b244e71cb5f89eb7cf5543cea222429}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a2b244e71cb5f89eb7cf5543cea222429}} 
+float {\bfseries Get\+Angle\+From\+Position} (Rect rect, float angle\+Offset)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a2306cc03a3a35afc0032a01a9de85f5e}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a2306cc03a3a35afc0032a01a9de85f5e}} 
+void {\bfseries Repaint} ()
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aff28edf51574f5a371d05f20a218f6a5}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aff28edf51574f5a371d05f20a218f6a5}} 
+void {\bfseries Setup\+Layout} (Rect rect, float angle\+Offset, float radius)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_ac6822dae4ee049e779a3304dabd905a3}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_ac6822dae4ee049e779a3304dabd905a3}} 
+bool {\bfseries Do\+Angle\+Range} (int index, Rect rect, float radius, float angle\+Offset, ref float start, ref float end, bool snap, bool disabled, Color gradient\+Min, Color gradient\+Mid, Color gradient\+Max)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_af59ce7c1b30e5c2e75e3394b56aa330a}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_af59ce7c1b30e5c2e75e3394b56aa330a}} 
+bool {\bfseries Do\+Select\+Angle\+Range} (int current\+Selected, out int new\+Selected)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aad88f70e3096cbe92aafa9304c8fbf81}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aad88f70e3096cbe92aafa9304c8fbf81}} 
+bool {\bfseries Do\+Create\+Range} (Rect rect, float radius, float angle\+Offset, float start, float end)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aa03ac89469736bae824b37c30e2ff95a}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aa03ac89469736bae824b37c30e2ff95a}} 
+void {\bfseries Do\+Create\+Range\+Tooltip} ()
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a650e74cc34f42e515cb37879a09921f2}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a650e74cc34f42e515cb37879a09921f2}} 
+bool {\bfseries Do\+Selector} (Rect rect, float angle\+Offset, float radius, float angle, out float new\+Angle)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_ae0d0d66cbae2c3f15b9a41d10bad7e91}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_ae0d0d66cbae2c3f15b9a41d10bad7e91}} 
+bool {\bfseries Do\+Remove\+Range} ()
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a44dca1996d53c37bf670c0bda889a891}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a44dca1996d53c37bf670c0bda889a891}} 
+bool {\bfseries Is\+Action\+Active} (Angle\+Range\+Action action)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aacb23270868c4937e28b039ec30fcca0}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_aacb23270868c4937e28b039ec30fcca0}} 
+bool {\bfseries Is\+Action\+Triggering} (Angle\+Range\+Action action)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a4e75033ec641f7a88f16495a3b9382af}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a4e75033ec641f7a88f16495a3b9382af}} 
+bool {\bfseries Is\+Action\+Finishing} (Angle\+Range\+Action action)
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a123df5bd9f4fa9fe656e0cf36eb1ed53}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a123df5bd9f4fa9fe656e0cf36eb1ed53}} 
+void {\bfseries Draw\+Angle\+Range\+Outline} (Rect rect, float start, float end, float angle\+Offset, float radius)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a04f0958d67011c238a984b57f79a1226}\label{interface_unity_editor_1_1_u2_d_1_1_i_angle_range_view_a04f0958d67011c238a984b57f79a1226}} 
+int {\bfseries hovered\+Range\+Index}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+2d.\+spriteshape@3.\+0.\+11/\+Editor/Angle\+Range\+View.\+cs\end{DoxyCompactItemize}

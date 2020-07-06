@@ -1,0 +1,245 @@
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md319}{}\doxysection{Overview}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md319}
+The {\bfseries{Sprite Shape}} is a flexible and powerful world building Asset that features Sprite tiling along a shape\textquotesingle{}s outline that automatically deforms and swaps Sprites based on the angle of the outline. Additionally, you can assign a Fill texture to a Sprite Shape to create filled shapes with tiled textures as backgrounds or other large level-\/building props.
+
+The following are examples of Sprite Shapes used to construct different parts of various levels.
+
+
+
+
+
+
+
+Sprite Shapes comprise of two parts -\/ the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Profile.md \char`\"{}\+Sprite Shape Profile\char`\"{} Asset, and the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Shape Controller\char`\"{} component. The Sprite Shape Profile contains the angle settings and Sprites used by the Sprite Shape, and you edit the Sprite Shape\textquotesingle{}s outline with the Sprite Shape Controller component.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md320}{}\doxysection{Importing Sprites for Sprite Shapes}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md320}
+We recommend using the following settings when importing Sprites for a Sprite Shape\+:
+
+
+\begin{DoxyEnumerate}
+\item \href{https://docs.unity3d.com/Manual/TextureTypes.html\#Sprite}{\texttt{ Texture Type}} -\/ Set this to {\bfseries{Sprite (2D and UI)}}. Other texture types are not supported for Sprite Shapes.
+\item {\bfseries{Sprite Mode}} -\/ Set this to {\bfseries{Single}} if the texture contains only a single Sprite.
+\item {\bfseries{Mesh Type}} -\/ Set this to {\bfseries{Full Rect}}.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md321}{}\doxysection{Sprite Shape Workflow}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md321}
+Create {\bfseries{Sprite Shapes}} in following the steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Create a {\bfseries{Sprite Shape Profile}} from the main menu (menu\+: {\bfseries{Assets $>$ Create $>$ Sprite Shape Profile}}). Select from the two available options\+:
+\begin{DoxyItemize}
+\item \href{SSProfile.html\#open-shape}{\texttt{ Open Shape}}
+\item \href{SSProfile.html\#closed-shape}{\texttt{ Closed Shape}}
+\end{DoxyItemize}
+\item Create \href{SSProfile.html\#creating-angle-ranges}{\texttt{ Angle Ranges}} and \href{SSProfile.html\#assigning-sprites}{\texttt{ assign Sprites}} in the {\bfseries{Sprite Shape Profile}}.
+\item Drag the {\bfseries{Sprite Shape Profile}} into the Scene to automatically generate a {\bfseries{Sprite Shape}} Game\+Object based on that Profile.
+\begin{DoxyItemize}
+\item You can create a Sprite Shape Game\+Object without a Profile from the main menu (menu\+: {\bfseries{Game\+Object $>$ 2D Object $>$ Sprite Shape}}). Then select a Sprite Shape Profile in the {\bfseries{Sprite Shape Controller}}\textquotesingle{}s {\bfseries{Profile}} settings. The same Profile can be used by multiple Sprite Shapes. ~\newline
+
+\end{DoxyItemize}
+\item Edit the outline of the Sprite Shape with the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Shape Controller\char`\"{} component settings.
+\item Enable \href{https://docs.unity3d.com/Manual/class-Physics2DManager.html}{\texttt{ Physics2D}} interactions for your Sprite Shapes by attaching a /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Collision.md \char`\"{}\+Collider\char`\"{} component.
+\end{DoxyEnumerate}
+
+Attach a {\bfseries{Collider 2D}} component to your Sprite Shape to enable the Collider properties in the {\bfseries{Sprite Shape Controller.}} Only the {\bfseries{Edge}} and {\bfseries{Polygon Collider 2D}} components can be used with {\bfseries{Sprite Shapes}}.
+
+
+
+The Collider mesh automatically updates itself to the shape of the Sprite Shape when attached. See the Collider section of the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Shape Controller\char`\"{} page for more details about the Sprite Shape Collider options.
+
+By default, the Collider mesh is automatically reshaped to match the Sprite Shape every time it is edited. To make manual edits to the Collider mesh directly, first disable both {\bfseries{Update Collider}} and {\bfseries{Optimize Collider}} in the {\bfseries{Sprite Shape Controller\textquotesingle{}s}} Collider settings to prevent the Controller from updating the Collider mesh automatically and overriding your manual edits.
+
+
+
+You can now edit the Collider mesh independent of the shape of the {\bfseries{Sprite Shape.}}
+
+The {\bfseries{Sprite Shape Controller}} component is automatically attached to the Game\+Object created when a {\bfseries{Sprite Shape Profile}} is dragged into the Scene. You edit the shape of the Sprite Shape\textquotesingle{}s outline through the Controller\textquotesingle{}s settings. The Controller displays different settings depending on different conditions.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md324}{}\doxysection{Property Settings -\/ Default}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md324}
+The default component settings below are displayed when Edit Spline is not enabled.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Profile}} &Select the {\bfseries{Sprite Shape Profile}} used by this Sprite Shape.  \\\cline{1-2}
+{\bfseries{Edit Spline}} &Enable  to make the Control Points of the Sprite Shape visible and editable.  \\\cline{1-2}
+{\bfseries{Spline}} &-\/  \\\cline{1-2}
+{\bfseries{Detail}} &Select the tessellation quality of the rendered Sprite Shape mesh. High/\+Medium/\+Low Quality options available.  \\\cline{1-2}
+{\bfseries{Open Ended}} &Disable to connect both ends of the Sprite Shape together to form an enclosed Shape. Enable to leave both ends of the Sprite Shape unconnected.  \\\cline{1-2}
+{\bfseries{Adaptive UV}} &Enabled by default. When enabled, \mbox{\hyperlink{namespace_unity}{Unity}} attempts to seamlessly tile the Sprites along the Sprite Shape path by deforming the Sprites to between Control Points. Disable this property to tile Sprites with no deformation and at their exact width. Sprites may appear cutoff if the space between Control Points is shorter than the width of the Sprite.  \\\cline{1-2}
+{\bfseries{Fill}} &-\/  \\\cline{1-2}
+{\bfseries{Stretch UV}} &Enable this setting to have \mbox{\hyperlink{namespace_unity}{Unity}} stretch the UV of the Fill texture across the Full Rect of the Sprite Shape.  \\\cline{1-2}
+{\bfseries{Pixels Per Unit}} (only available when Stretch UV is disabled) &This values affect the appearance of the Fill texture of the Sprite Shape. This value affects the scale of the Fill texture, with higher values reducing the size of the texture. The default value is 100.  \\\cline{1-2}
+{\bfseries{World Space UV}} (only available when {\bfseries{Stretch UV}} is disabled) &Enable to apply the Fill texture according to the World Space UV, instead of per Game\+Object UV.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md325}{}\doxysubsection{With Edit Spline enabled and a Control Point selected}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md325}
+Enable {\bfseries{Edit Spline}} in the Controller settings to make Control Points on the Sprite Shape visible and editable. Selecting a Control Point enables the following additional Controller settings.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Point}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Point}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/  }\\\cline{1-2}
+\endhead
+{\bfseries{Tangent Mode}} &Select one of three {\bfseries{Point Modes}} to change the way tangents on Control Points are edited.  \\\cline{1-2}
+\+\_\+\+\_\+\+Linear\+\_\+\+\_\+ &No curve is formed between the Control Point and its neighboring points.  \\\cline{1-2}
+\+\_\+\+\_\+\+Continuous Mirrored\+\_\+\+\_\+ &Two tangents appear on opposite sides of the Control Point, and the spline between the Control Point and its neighbors becomes curved. Adjust the tangents to change the shape of the curve. The angle between the two tangents is always 180 degrees in this mode.  \\\cline{1-2}
+\+\_\+\+\_\+\+Broken Mirrored\+\_\+\+\_\+ &Two tangents appear on opposite sides of the Control Point, and the spline between the Control Point and its neighbors becomes curved. Adjust the tangents to change the shape of the curve. The length and angle of the tangents can be adjusted independently in this mood.  \\\cline{1-2}
+{\bfseries{Position}} &The local x and y coordinates of a selected Control Point.  \\\cline{1-2}
+{\bfseries{Height}} &Increase or decrease the height of Sprites at the Control Point by a factor of 0.\+1 to 4.  \\\cline{1-2}
+{\bfseries{Corner}} &Sets whether Corner Sprites are rendered at Control Points. Set to {\bfseries{Automatic}} by default.  \\\cline{1-2}
+{\bfseries{Disabled}} &The selected Control Point does not automatically render a Control Point.  \\\cline{1-2}
+{\bfseries{Automatic}} &The Control Point displays the assigned Corner Sprite, if both it and its neighbors are in {\bfseries{Linear Point Mode}}.  \\\cline{1-2}
+{\bfseries{Sprite Variant}} &Select the {\bfseries{Sprite Variant}} from the visual Variant selector. Press {\bfseries{N}} to cycle through all available Variants for the Control Point.  \\\cline{1-2}
+{\bfseries{Snapping}} &Enable to snap Control Points according the Project\textquotesingle{}s Snap settings.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md326}{}\doxysubsection{Additional Collider settings}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md326}
+Add either the {\bfseries{Polygon Collider 2D}} or {\bfseries{Edge Collider 2D}} component to the {\bfseries{Sprite Shape}} to enable additional {\bfseries{Collider}} settings in the {\bfseries{Sprite Shape Controller}}. See the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Collision.md \char`\"{}\+Enabling Collision\char`\"{} page for more details about enabling Colliders with Sprite Shapes.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Collider }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Collider }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ -\/  }\\\cline{1-2}
+\endhead
+{\bfseries{Update Collider}} &Enabled by Default. Enable this option to have the Collider mesh be updated to the Sprite Shape\textquotesingle{}s current shape as the Sprite Shape is edited. Disable if you are editing the Collider mesh separately from the Sprite Shape and to use a custom Collider mesh.  \\\cline{1-2}
+{\bfseries{Offset}} &Select the amount to extrude the Collider mesh towards the edge of the Sprite Shape. The range is from -\/0.\+5 to 0.\+5, starting at 0 by default.  \\\cline{1-2}
+{\bfseries{Optimize Collider}} &Enabled by default. Enable to have \mbox{\hyperlink{namespace_unity}{Unity}} optimize the Collider mesh by cleaning up extra control points that are co-\/linear. Disable this option when editing the Collider mesh separately from the Sprite Shape to prevent \mbox{\hyperlink{namespace_unity}{Unity}} from affecting the custom Collider mesh.  \\\cline{1-2}
+{\bfseries{Detail}} &Sets the tessellation quality of the rendered Collider. High/\+Medium/\+Low Quality options available.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md327}{}\doxysection{Editing the Spline}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md327}
+To edit the mesh outline of the {\bfseries{Sprite Shape}}, click the {\bfseries{Edit Spline}} button to make the Shape\textquotesingle{}s spline and its {\bfseries{Control Points}} become visible and editable.
+
+
+
+When {\bfseries{Edit Spline}} is enabled, move the Control Points of the Sprite Shape to adjust its overall shape and size. Add additional Control Points by clicking on the spline in between Control Points. Press the {\bfseries{Del/\+Delete}} key to remove the currently selected Control Point.
+
+
+
+With a Control Point selected, cycle through the {\bfseries{Point Modes \+\_\+\+\_\+by pressing the \+\_\+\+\_\+M}} key. To change the {\bfseries{Mode}} of multiple Control Points at once, ensure that all selected Control Points are the same {\bfseries{Mode}} first before cycling or selecting another {\bfseries{Mode}}.
+
+To change the Sprite Variant currently displayed at a selected Control Point, press the {\bfseries{N}} key to cycle through all available Variants.
+
+All shortcut keys can be rebound under the Shortcut menu (menu\+: {\bfseries{Edit $>$ Shortcuts... $>$ Sprite\+Shape Editing}}).\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md328}{}\doxysection{Point Modes}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md328}
+When a Control Point is selected, its {\bfseries{Point Mode}} can be one of three modes-\/ {\bfseries{Linear}}, {\bfseries{Mirrored}}, and {\bfseries{Non-\/\+Mirrored}}.
+
+The {\bfseries{Point Mode}} determines the behavior of the tangents that are used to adjust the spline between Control Points. Each Control Point can be set to a specific Point Mode and contain its own settings.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md329}{}\doxysubsection{Linear Point Mode}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md329}
+In {\bfseries{Linear Point Mode}}, there are no tangents to control the curve between the Control Point and its neighbors, curves are not formed between Control Points and Sprites may overlap if they intersect.
+
+Adjust which Sprite is displayed when two or more intersect by adjusting their {\bfseries{Order}} value in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Profile.md \char`\"{}\+Sprite Shape Profile\textquotesingle{}s\char`\"{} {\bfseries{Angle Range}} settings.
+
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md330}{}\doxysubsection{Continuous Mirrored Point Mode}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md330}
+In {\bfseries{Continuous Mirrored Point Mode}}, tangents appear on both sides of the selected Control Point to create a curve between the Control Point and its neighbors. Adjust the shape of the curve with the tangents. In this mode, the angle between the tangents is always maintained at 180 degrees although their lengths from the can vary.
+
+Press {\bfseries{B}} to mirror the length of the last edited tangent onto the opposite tangent.
+
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md331}{}\doxysubsection{Broken Mirrored Point Mode}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md331}
+In {\bfseries{Broken Mirrored Point Mode}}, tangents appear on both sides of the selected Control Point to create a curve between the Control Point and its neighbors. Adjust the shape of the curve with the tangents. In this mode, the length and angle of each tangent can be adjusted independently.
+
+Press {\bfseries{B}} to mirror the length of the last edited tangent onto the opposite tangent. In this mode, pressing {\bfseries{B}} also causes the angle of the opposite tangent to become exactly 180 degrees from the last edited tangent.
+
+
+
+The {\bfseries{Sprite Shape Profile}} contains the settings that determine which Sprites that appear on a Sprite Shape at specific Angle Ranges, as well as other display settings. You can use the same Profile for multiple {\bfseries{Sprite Shapes}} in a Scene.
+
+Create a {\bfseries{Sprite Shape Profile}} from the Editor main menu (menu\+: {\bfseries{Assets $>$ Create $>$ Sprite Shape Profile}}), and select from the two available options\+: {\bfseries{Open Shape}} and {\bfseries{Closed Shape}}.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Control Points}} &-\/  \\\cline{1-2}
+{\bfseries{Use Sprite Borders}} &Enable to draw the {\bfseries{Sprite Borders}} of a Sprite at the Control Point. Define the {\bfseries{Sprite Borders}} in the {\bfseries{Sprite Editor}}.  \\\cline{1-2}
+{\bfseries{Fill}} &-\/  \\\cline{1-2}
+{\bfseries{Texture}} &Set the Texture to be used as a Fill to this field. Has no effect if the {\bfseries{Open Ended}} property in the {\bfseries{Sprite Shape Controller}} settings is enabled.  \\\cline{1-2}
+{\bfseries{Offset}} &Determines the border offset at the edges of the Fill texture.  \\\cline{1-2}
+$\ast$$\ast$\+Angle Ranges (tool)$\ast$$\ast$ &Use this tool to create Angle Ranges and assign Sprites to those ranges.  \\\cline{1-2}
+{\bfseries{Start (degrees)}} &Enter the starting angle for the selected Angle Range in degrees.  \\\cline{1-2}
+{\bfseries{End (degrees)}} &Enter the ending angle for the selected Angle Range in degrees.  \\\cline{1-2}
+{\bfseries{Order}} &Determines the display priority when Sprites intersect. Sprites with higher values are rendered above lower ones.  \\\cline{1-2}
+{\bfseries{Sprites}} &List of Sprites assigned to the selected Angle Range. Displays a list of all Sprites assigned to the selected Angle Range. The order of Sprites in the list determines their {\bfseries{Sprite Variant}} number, starting from zero at the top of the list. The first Sprite at the top of the list is the Sprite displayed by default at a Control Point.  \\\cline{1-2}
+{\bfseries{Corners}} &-\/  \\\cline{1-2}
+$\ast$$\ast$$\ast$ All Corner options$\ast$$\ast$ &Assign specific Sprites to be displayed on the Sprite Shape at the respective corners. Refer to the documentation on \mbox{[}Corner Sprites\mbox{]}() for more information.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md333}{}\doxysection{Open Shape}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md333}
+
+
+Use the {\bfseries{Open Shape}} preset Profile to create Shapes made from a single edge outline with tiled Sprites along its edge. This preset is ideal for creating level elements such as platforms.
+
+
+
+Drag the Open Shape Profile into the Scene view to automatically generate a Sprite Shape with {\bfseries{Open Ended}} enabled in its {\bfseries{Sprite Shape Controller}} settings.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md334}{}\doxysection{Closed Shape}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md334}
+
+
+Use the {\bfseries{Closed Shape}} preset Profile to create Shapes that encompass an enclosed area. The Closed Sprite Shape can display and tile a Fill texture in the enclosed area, if a Fill texture is set in its Profile settings. Use this preset to create large solid filled Shapes that are ideal for backgrounds or large platforms.
+
+
+
+Drag the Closed Shape Profile into the Scene view to automatically generate a Sprite Shape with {\bfseries{Open Ended}} disabled in its {\bfseries{Sprite Shape Controller}} settings. The Closed Shape Profile\textquotesingle{}s preset Angle Ranges create a square Sprite Shape by default.
+
+A key feature of the {\bfseries{Sprite Shape Profile}} is the Angle Ranges tool. Assigning an Angle Range determines what Sprite is displayed at specific angles, as the Sprite Shape is deformed in the Scene.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md335}{}\doxysection{Creating Angle Ranges}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md335}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md336}{}\doxysubsection{Method 1\+:}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md336}
+To create an Angle Range, click the {\bfseries{Create Range}} button at the bottom of the Angle Ranges tool\+:
+
+
+
+The {\bfseries{Create Range}} button is only visible if the {\bfseries{Preview Handle}} is over an area without an Angle Range (see the example image below).
+
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md337}{}\doxysubsection{Method 2\+:}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md337}
+Another way is to hover your cursor over an empty area of the Angle Range circle. An outline appears to show the possible default angle range. Click to create this Angle Range.
+
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md338}{}\doxysubsection{Editing the Angle Range degrees}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md338}
+The range covered by the currently selected Angle Range is displayed at the bottom of the tool.
+
+
+
+You can edit a range by entering new values into {\bfseries{Start}} and {\bfseries{End}}, or drag either endpoint of the tool to the desired angles. A range cannot be extended into an existing neighboring range. To delete an Angle Range, select the range and then press the {\bfseries{Del/\+Delete}} key.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md339}{}\doxysection{Assigning Sprites}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md339}
+After creating the Angle Ranges, the next step is to assign Sprites to those ranges. The {\bfseries{Sprites}} list is found beneath the {\bfseries{Angle Ranges}} tool. It lists all the Sprites assigned to the selected range.
+
+
+
+To add Sprites to the list, click the {\bfseries{+}} icon to insert a new row to the list. Click the circle icon next to the empty row to open the {\bfseries{Object Picker}} window, which displays all available Sprites in the project.
+
+
+
+You can also drag a Sprite directly onto a row to add it to the list. The Sprite at the top of the list is the default Sprite displayed on the Sprite Shape. Refer to the other Sprites in the list by their /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Variant\char`\"{} number. See the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Shape Controller\char`\"{} page for more details.
+
+
+
+Drag the leftmost ends of the rows up or down to reorder the list, which changes the {\bfseries{Sprite Variant}} numbers of the Sprites accordingly.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md340}{}\doxysection{Previewing Sprites of multiple Angle Ranges}\label{md__space_survival__library__package_cache_com_8unity_82d_8spriteshape_0d3_80_811__documentation_autotoc_md340}
+After assigning Sprites to multiple {\bfseries{Angle Ranges}}, rotate the Preview Handle around the Angle Range tool to preview the Sprites assigned those ranges.
+
+
+
+
+
+
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/index.md \char`\"{}\+Overview\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Profile.md \char`\"{}\+Sprite Shape Profile\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Controller.md \char`\"{}\+Sprite Shape Controller\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+spriteshape@3.\+0.\+11/\+Documentation$\sim$/\+S\+S\+Collision.md \char`\"{}\+Enabling Collision\char`\"{} 
+\end{DoxyItemize}
