@@ -1,0 +1,70 @@
+\hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer}{}\doxysection{Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net .I\+O.\+Debug\+Writer Class Reference}
+\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer}\index{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}}
+
+
+Writes a the current mesh into a text file.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a12c48d87db41452477d95f09d7ee4e21}{Start}} (string session)
+\begin{DoxyCompactList}\small\item\em Start a new session with given name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a8e10ff19505eb45d485e97e7331f7824}{Write}} (Mesh mesh, bool skip=false)
+\begin{DoxyCompactList}\small\item\em Write complete mesh to file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_aebaeee61d72975658c8af9958d63ee3d}{Finish}} ()
+\begin{DoxyCompactList}\small\item\em Finish this session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Writes a the current mesh into a text file. 
+
+File format\+:
+
+num\+\_\+nodes id\+\_\+1 nx ny mark ... id\+\_\+n nx ny mark
+
+num\+\_\+segs id\+\_\+1 p1 p2 mark ... id\+\_\+n p1 p2 mark
+
+num\+\_\+tris id\+\_\+1 p1 p2 p3 n1 n2 n3 ... id\+\_\+n p1 p2 p3 n1 n2 n3 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_aebaeee61d72975658c8af9958d63ee3d}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_aebaeee61d72975658c8af9958d63ee3d}} 
+\index{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}!Finish@{Finish}}
+\index{Finish@{Finish}!UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}}
+\doxysubsubsection{\texorpdfstring{Finish()}{Finish()}}
+{\footnotesize\ttfamily void Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net .I\+O.\+Debug\+Writer.\+Finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finish this session. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a12c48d87db41452477d95f09d7ee4e21}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a12c48d87db41452477d95f09d7ee4e21}} 
+\index{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}!Start@{Start}}
+\index{Start@{Start}!UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net .I\+O.\+Debug\+Writer.\+Start (\begin{DoxyParamCaption}\item[{string}]{session }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start a new session with given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the session (and output files).\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a8e10ff19505eb45d485e97e7331f7824}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_01_1_1_i_o_1_1_debug_writer_a8e10ff19505eb45d485e97e7331f7824}} 
+\index{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}!Write@{Write}}
+\index{Write@{Write}!UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter@{UnityEngine.U2D.Animation.TriangleNet .IO.DebugWriter}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily void Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net .I\+O.\+Debug\+Writer.\+Write (\begin{DoxyParamCaption}\item[{Mesh}]{mesh,  }\item[{bool}]{skip = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write complete mesh to file. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+2d.\+animation@3.\+2.\+2/\+Runtime/\+Triangle/\+I\+O/Debug\+Writer.\+cs\end{DoxyCompactItemize}

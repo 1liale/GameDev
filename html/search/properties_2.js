@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['canvasrenderer_3654',['canvasRenderer',['../class_t_m_pro_1_1_text_mesh_pro_u_g_u_i.html#a8410ad5e8c69c64d5e1df5a722390526',1,'TMPro.TextMeshProUGUI.canvasRenderer()'],['../class_t_m_pro_1_1_t_m_p___sub_mesh_u_i.html#a4888f8c9e99911b05312c1ed5a578a33',1,'TMPro.TMP_SubMeshUI.canvasRenderer()']]],
+  ['captionimage_3655',['captionImage',['../class_t_m_pro_1_1_t_m_p___dropdown.html#a5cf589817b242dfa0a8a3c01e47afcd0',1,'TMPro::TMP_Dropdown']]],
+  ['captiontext_3656',['captionText',['../class_t_m_pro_1_1_t_m_p___dropdown.html#a525bc41ab8c46321882490782ad76177',1,'TMPro::TMP_Dropdown']]],
+  ['caretposition_3657',['caretPosition',['../class_t_m_pro_1_1_t_m_p___input_field.html#a3d3a39b5c399ed120a847fed2d842d81',1,'TMPro::TMP_InputField']]],
+  ['caretpositioninternal_3658',['caretPositionInternal',['../class_t_m_pro_1_1_t_m_p___input_field.html#a48b9911b7de2a895d5411f4526a1acc1',1,'TMPro::TMP_InputField']]],
+  ['categories_3659',['categories',['../struct_unity_editor_1_1_u2_d_1_1_animation_1_1_sprite_category_list.html#a70d3e4e0449f09316a94dfdef6775ec6',1,'UnityEditor::U2D::Animation::SpriteCategoryList']]],
+  ['characterlookuptable_3660',['characterLookupTable',['../class_t_m_pro_1_1_t_m_p___font_asset.html#aa1ca0b68db11064bd7f1ebc7278509b1',1,'TMPro::TMP_FontAsset']]],
+  ['characterspacing_3661',['characterSpacing',['../class_t_m_pro_1_1_t_m_p___text.html#a4f58b974821506bd6443e8771306eaf1',1,'TMPro::TMP_Text']]],
+  ['charactertable_3662',['characterTable',['../class_t_m_pro_1_1_t_m_p___font_asset.html#a26ec969da60abda09e7a4c573805dfea',1,'TMPro::TMP_FontAsset']]],
+  ['characterwidthadjustment_3663',['characterWidthAdjustment',['../class_t_m_pro_1_1_t_m_p___text.html#a14f597328c87f7682183dfd25b0998ba',1,'TMPro::TMP_Text']]],
+  ['children_3664',['Children',['../interface_unity_editor_1_1_test_tools_1_1_test_runner_1_1_api_1_1_i_test_result_adaptor.html#abca720cd0da0200076c869696bcba4c2',1,'UnityEditor::TestTools::TestRunner::Api::ITestResultAdaptor']]],
+  ['classtoedit_3665',['classToEdit',['../class_unity_editor_1_1_timeline_1_1_custom_timeline_editor_attribute.html#a29d9d2bcbdbc52add31b4ce0d858bf01',1,'UnityEditor::Timeline::CustomTimelineEditorAttribute']]],
+  ['clip_3666',['clip',['../class_unity_engine_1_1_timeline_1_1_animation_playable_asset.html#a8db52ada6e34ac04e62c415b0ec6deba',1,'UnityEngine.Timeline.AnimationPlayableAsset.clip()'],['../class_unity_engine_1_1_timeline_1_1_audio_playable_asset.html#ae5b9e8446c98b0c9c7f880c2fa0849eb',1,'UnityEngine.Timeline.AudioPlayableAsset.clip()']]],
+  ['clipassetduration_3667',['clipAssetDuration',['../class_unity_engine_1_1_timeline_1_1_timeline_clip.html#aba2b4a1f5708212f1d661355316698ae',1,'UnityEngine::Timeline::TimelineClip']]],
+  ['clipcaps_3668',['clipCaps',['../class_unity_engine_1_1_timeline_1_1_activation_playable_asset.html#ac9d5adbfd247275a81e20e197813dd7f',1,'UnityEngine.Timeline.ActivationPlayableAsset.clipCaps()'],['../class_unity_engine_1_1_timeline_1_1_animation_playable_asset.html#ae4a56f92bff6ef117d6af2b03b206fb8',1,'UnityEngine.Timeline.AnimationPlayableAsset.clipCaps()'],['../class_unity_engine_1_1_timeline_1_1_audio_playable_asset.html#aab32fedf9da36f0aef98c2ae5bb426df',1,'UnityEngine.Timeline.AudioPlayableAsset.clipCaps()'],['../class_unity_engine_1_1_timeline_1_1_control_playable_asset.html#ab433eb7836f17e68cad0f436529f7ab7',1,'UnityEngine.Timeline.ControlPlayableAsset.clipCaps()'],['../interface_unity_engine_1_1_timeline_1_1_i_timeline_clip_asset.html#ad73af6af3aa5b1f06545740d9da4db2c',1,'UnityEngine.Timeline.ITimelineClipAsset.clipCaps()'],['../class_unity_engine_1_1_timeline_1_1_timeline_clip.html#abec3dd14b18de191efcb637a9342605f',1,'UnityEngine.Timeline.TimelineClip.clipCaps()']]],
+  ['clipin_3669',['clipIn',['../class_unity_engine_1_1_timeline_1_1_timeline_clip.html#adfbc75d48dd024ef1a5bddb1cb300aa2',1,'UnityEngine::Timeline::TimelineClip']]],
+  ['color_3670',['color',['../class_t_m_pro_1_1_t_m_p___text.html#af874b3b1f2d1565c68e0c3ad9f79e5c4',1,'TMPro.TMP_Text.color()'],['../class_unity_engine_1_1_timeline_1_1_track_color_attribute.html#a4e297fcd83d0c11e702572bd7a026ea7',1,'UnityEngine.Timeline.TrackColorAttribute.color()']]],
+  ['colorgradient_3671',['colorGradient',['../class_t_m_pro_1_1_t_m_p___text.html#a9e388e5afbcba8e72a65cd00ca7001b4',1,'TMPro::TMP_Text']]],
+  ['colorgradientpreset_3672',['colorGradientPreset',['../class_t_m_pro_1_1_t_m_p___text.html#a7e5dc2c3fb4201a3a18df594f95be7eb',1,'TMPro::TMP_Text']]],
+  ['conformingdelaunay_3673',['ConformingDelaunay',['../class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior.html#a5b41c260b8a90ec5e4faea657904ebcb',1,'UnityEngine::U2D::Animation::TriangleNet::Behavior']]],
+  ['convex_3674',['Convex',['../class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior.html#abc7d44a81ed4003ce7e43f4ddb54aa47',1,'UnityEngine::U2D::Animation::TriangleNet::Behavior']]],
+  ['creationsettings_3675',['creationSettings',['../class_t_m_pro_1_1_t_m_p___font_asset.html#a5add1fb1c5ac1afb72c1f6c5b64f9d8a',1,'TMPro::TMP_FontAsset']]],
+  ['cropframex_3676',['cropFrameX',['../class_unity_engine_1_1_u2_d_1_1_pixel_perfect_camera.html#a221e1983fc6a1afbb2f922aa345eea4b',1,'UnityEngine::U2D::PixelPerfectCamera']]],
+  ['cropframey_3677',['cropFrameY',['../class_unity_engine_1_1_u2_d_1_1_pixel_perfect_camera.html#a802dad7e27f7087c63e565c3a87c9e79',1,'UnityEngine::U2D::PixelPerfectCamera']]],
+  ['curves_3678',['curves',['../class_unity_engine_1_1_timeline_1_1_timeline_clip.html#a7c4922742bb044dbd4270829393d1b14',1,'UnityEngine.Timeline.TimelineClip.curves()'],['../class_unity_engine_1_1_timeline_1_1_track_asset.html#af89a57d8bfdefc984d0cb1bc15c14d2f',1,'UnityEngine.Timeline.TrackAsset.curves()']]]
+];

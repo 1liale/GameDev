@@ -1,0 +1,88 @@
+\hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner}{}\doxysection{Unity\+Editor.\+Timeline.\+Space\+Partitioner Class Reference}
+\label{class_unity_editor_1_1_timeline_1_1_space_partitioner}\index{UnityEditor.Timeline.SpacePartitioner@{UnityEditor.Timeline.SpacePartitioner}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Cached\+List}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a28db13deca2d4efaa65d47aac98c9fac}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a28db13deca2d4efaa65d47aac98c9fac}} 
+void {\bfseries Clear} ()
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a85d8effbff6e987e54683254d4e17680}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a85d8effbff6e987e54683254d4e17680}} 
+void {\bfseries Add\+Bounds} (\mbox{\hyperlink{interface_unity_editor_1_1_timeline_1_1_i_bounds}{I\+Bounds}} bounds)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a88cdc0700e74458c055f6f7bfbe5e665}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a88cdc0700e74458c055f6f7bfbe5e665}} 
+void {\bfseries Add\+Bounds} (object item, Rect rect)
+\item 
+I\+Enumerable$<$ T $>$ \mbox{\hyperlink{class_unity_editor_1_1_timeline_1_1_space_partitioner_a3b9c9981b3e73a9459535971070f2714}{Get\+Items\+At\+Position$<$ T $>$}} (Vector2 position)
+\begin{DoxyCompactList}\small\item\em Get items of type T at a given position \end{DoxyCompactList}\item 
+I\+Enumerable$<$ T $>$ \mbox{\hyperlink{class_unity_editor_1_1_timeline_1_1_space_partitioner_a07f7c8bcbe953aec545e4bc1066cb1ed}{Get\+Items\+In\+Area$<$ T $>$}} (Rect area)
+\item 
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a37156a92a8b51b1b189f16cb7079f047}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a37156a92a8b51b1b189f16cb7079f047}} 
+void {\bfseries Debug\+Draw} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a3b9c9981b3e73a9459535971070f2714}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a3b9c9981b3e73a9459535971070f2714}} 
+\index{UnityEditor.Timeline.SpacePartitioner@{UnityEditor.Timeline.SpacePartitioner}!GetItemsAtPosition$<$ T $>$@{GetItemsAtPosition$<$ T $>$}}
+\index{GetItemsAtPosition$<$ T $>$@{GetItemsAtPosition$<$ T $>$}!UnityEditor.Timeline.SpacePartitioner@{UnityEditor.Timeline.SpacePartitioner}}
+\doxysubsubsection{\texorpdfstring{GetItemsAtPosition$<$ T $>$()}{GetItemsAtPosition< T >()}}
+{\footnotesize\ttfamily I\+Enumerable$<$T$>$ Unity\+Editor.\+Timeline.\+Space\+Partitioner.\+Get\+Items\+At\+Position$<$ T $>$ (\begin{DoxyParamCaption}\item[{Vector2}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get items of type T at a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+{\em in\+Clip\+Space} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+Uses a (1,1) sized box Use .To\+List() or .To\+Array() when not enumerating the result immediately 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_unity_editor_1_1_timeline_1_1_space_partitioner_a07f7c8bcbe953aec545e4bc1066cb1ed}\label{class_unity_editor_1_1_timeline_1_1_space_partitioner_a07f7c8bcbe953aec545e4bc1066cb1ed}} 
+\index{UnityEditor.Timeline.SpacePartitioner@{UnityEditor.Timeline.SpacePartitioner}!GetItemsInArea$<$ T $>$@{GetItemsInArea$<$ T $>$}}
+\index{GetItemsInArea$<$ T $>$@{GetItemsInArea$<$ T $>$}!UnityEditor.Timeline.SpacePartitioner@{UnityEditor.Timeline.SpacePartitioner}}
+\doxysubsubsection{\texorpdfstring{GetItemsInArea$<$ T $>$()}{GetItemsInArea< T >()}}
+{\footnotesize\ttfamily I\+Enumerable$<$T$>$ Unity\+Editor.\+Timeline.\+Space\+Partitioner.\+Get\+Items\+In\+Area$<$ T $>$ (\begin{DoxyParamCaption}\item[{Rect}]{area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em area} & \\
+\hline
+{\em in\+Clip\+Space} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+timeline@1.\+2.\+14/\+Editor/\+Utilities/Space\+Partitioner.\+cs\end{DoxyCompactItemize}
