@@ -9,18 +9,17 @@ public class CharacterSelection : MonoBehaviour
     public string[] names;
     private int curSelect = 0;
 
-    private TypeEffect display;
+    //private TypeEffect display;
 
     private NameDisplay characterName;
 
-    DialogueManager description; 
-    private string[] curDisplay;
+    DialogueManager dialogueManager; 
 
     // Start is called before the first frame update
     void Start()
     {
         characterName = FindObjectOfType<NameDisplay>();
-        description = FindObjectOfType<DialogueManager>();
+        dialogueManager = FindObjectOfType<DialogueManager>();
         displayDescription();
 
         characterName.setName(names[curSelect]);
@@ -61,7 +60,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void displayDescription()
     {
-        curDisplay = description.getDescription(curSelect);
+        //curDisplay = description.getDescription(curSelect);
         display = FindObjectOfType<TypeEffect>();
         //foreach(string str in curDisplay)
         //{

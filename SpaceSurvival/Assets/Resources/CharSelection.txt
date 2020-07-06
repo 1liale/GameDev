@@ -1,15 +1,15 @@
-1.A former 11 Bravo from the Centurion Army, 
+1.Veteran@A former 11 Bravo from the Centurion Army, 
 he was honorably discharged just before the start of the war. 
 He is returning to Mars, his home planet.
 
-2.Despite graduating with honors from the Centaurian National University,
+2.Engineer@Despite graduating with honors from the Centaurian National University,
 the nuclear engineering student cannot find a job in the Centauri system. 
 The war made it increasingly hard for Solarians to get a working visa in Centauri, 
 especially for critical workers like nuclear engineers.
 
-3.In his early 50s, the AI specialist can no longer compete with the younger kids. 
+3.Computer Scientist@In his early 50s, the AI specialist can no longer compete with the younger kids. 
 He is returning to Earth to look for a more relaxed job.
 
-4.The advancement of medical AI largely replaced the role of the nutritionist.
+4.Nutritionist@The advancement of medical AI largely replaced the role of the nutritionist.
 She has been recently forced to retire and is returning to Earth, 
 the final resting place of her beloved husband.

@@ -665,7 +665,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.95, y: 1.02}
-  m_SizeDelta: {x: 25, y: 10}
+  m_SizeDelta: {x: 25, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &376298888
 MonoBehaviour:
@@ -2502,6 +2502,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1991425622}
     m_Modifications:
+    - target: {fileID: 7232837499868124800, guid: fbb286519a42d97458ad4eafb50845f5,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7232837499868124805, guid: fbb286519a42d97458ad4eafb50845f5,
         type: 3}
       propertyPath: m_LocalRotation.x
