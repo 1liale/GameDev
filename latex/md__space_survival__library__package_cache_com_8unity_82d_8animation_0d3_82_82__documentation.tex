@@ -1,0 +1,800 @@
+{\bfseries{Sprite Swap}} is integrated with the 2D Animation workflow. You must install the following packages or newer to use Sprite Swap\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/Packages/com.unity.2d.animation@latest/index.html?preview=1}{\texttt{ 2D Animation version 2.\+2.\+0-\/preview.\+1}}
+\item \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?preview=1}{\texttt{ P\+S\+D\+Importer version 1.\+2.\+0-\/preview.\+1}}
+\end{DoxyItemize}
+
+To ensure Sprite Swap works correctly with skeletal animation, the animation rig needs to be identical between the interchangeable Sprites. Use the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Copy\+Paste\+Skele.md \char`\"{}\+Copy and Paste\char`\"{} tools to duplicate the rig from one Sprite to the other Sprite(s) to ensure they can be swapped.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md71}{}\doxysection{Asset Generation Behaviour}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md71}
+The following is the steps that \mbox{\hyperlink{namespace_unity}{Unity}} takes to generate the various Sprite Swap components.
+
+
+\begin{DoxyEnumerate}
+\item When you import a P\+SB file with the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?preview=1}{\texttt{ P\+SD Importer}}, \mbox{\hyperlink{namespace_unity}{Unity}} generates a Prefab and creates a /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} as a sub-\/\+Asset of this Prefab.
+\item \mbox{\hyperlink{namespace_unity}{Unity}} then generates a Game\+Object for each Sprite in the Prefab that does not belong to a {\bfseries{Category}}, or is the first Label in the Category.
+\item \mbox{\hyperlink{namespace_unity}{Unity}} attaches the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+R\+Component.md \char`\"{}\+Sprite Resolver component\char`\"{} to all Sprite Game\+Objects that belong to a Category.
+\item \mbox{\hyperlink{namespace_unity}{Unity}} then attaches the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Component.md \char`\"{}\+Sprite Library component\char`\"{} to the root Game\+Object, and the component is set to reference the Sprite Library Asset created in Step 1.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md72}{}\doxysection{Sprite Swap and Skeletal Animation Limitations}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md72}
+To ensure Sprite Swap works correctly with skeletal animation, the animation skeleton rig needs to be identical between corresponding Sprites that are to be swapped. Use the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Copy\+Paste\+Skele.md \char`\"{}\+Copy and Paste\char`\"{} feature to copy both the bones and Mesh data from one Sprite(s) to the other corresponding Sprite(s).
+
+You can use {\bfseries{Sprite Swap}} to quickly change only one Sprite on the character Prefab without affecting the other Sprites. This means you can alter part of a character’s appearance (for example, change a scarf to a different color) while the rest of the character remains the same.
+
+In the following example, we have two Sprites that are variations of the character’s scarf -\/ one green and one blue. This workflow demonstrates how to switch from one to the other in the same Prefab.
+
+~\newline
+\+\_\+\+\_\+\+Left\+:\+\_\+\+\_\+ The original green scarf. {\bfseries{Right\+:}} An alternate blue scarf.
+
+
+\begin{DoxyEnumerate}
+\item Place the Sprites for both scarves into the same Sprite Library Asset, and add them both to the same Category named ‘\+Scarf’. You can do this directly in the Skinning Editor via the Sprite tab in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Vis.md \char`\"{}\+Sprite Visibility panel\char`\"{}.
+\item Give each of the Sprites a unique {\bfseries{Label}}.
+
+
+\item In the {\bfseries{Scene}}, select the character Prefab and then select the ‘\+Scarf’ Game\+Object the Hierarchy window.
+\item Go to the \href{SLAsset.html\#sprite-resolver-component}{\texttt{ Sprite Resolver component}} of the ‘\+Scarf’ Game\+Object. The {\bfseries{Sprite Resolver\+\_\+\+\_\+‘s visual selector displays the two Sprites available in the ‘\+Scarf’ \+\_\+\+\_\+\+Category}}.
+
+
+\item Select the ‘blue scarf’ to switch the Sprite rendered by the ‘\+Scarf’ Game\+Object to it instead.
+
+~\newline
+Sprite Resolver’s Label set to ‘blue scarf’.
+\end{DoxyEnumerate}
+
+The following steps are the general workflow you can use to prepare your character for animation with the Skinning Editor. The steps detail how to create the bones, generate the meshes, and adjust the weights for your character.
+
+
+\begin{DoxyEnumerate}
+\item Use the \href{SkinEdToolsShortcuts.html\#bone-tools}{\texttt{ Create Bone}} tool to build the bones of the character skeleton\+:
+\begin{DoxyItemize}
+\item With the tool selected, click to define the start-\/point of the bone. Then move the cursor to where the bone should end, and click again to set the bone’s end-\/point.
+\item After creating a bone, the tool allows you to set the end-\/point of the second bone and so on, in order to create a chain of bones.
+\item To continue a chain of bones from any bone, select the {\bfseries{Create Bone}} tool and click an existing bone, then click its end-\/point. A new bone is started from the end-\/point, creating a chain.
+\item Alternatively, you can set the start-\/point of the new bone away from its parent bone. The child bone still belongs to the same chain and this is reflected in the \href{SpriteVis.html\#bone-tab-and-hierarchy-tree}{\texttt{ bone hierarchy}}.
+
+~\newline
+A faded link shows the red and blue bones are connected in a chain.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item After creating the bones of the character, generate the geometry Mesh for the {\bfseries{Sprites}}. It is recommended to use the \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ Auto Geometry}} tool to auto-\/generate the geometry Mesh.
+\begin{DoxyItemize}
+\item With the {\bfseries{Auto Geometry}} tool selected, select a Sprite and then select the {\bfseries{Generate For Selected button}} to generate a Mesh for that Sprite only. To {\bfseries{Generate For All Visible Sprites}}, click the generate button without selecting any Sprite.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Refine the generated Meshes further by using the \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ Edit Geometry}} Geometry tool, or create your own Mesh outline with the \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ Create Vertex}} and \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ Create Edge}} Geometry tools.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item \href{SkinEdToolsShortcuts.html\#weight-tools}{\texttt{ Paint weights}} onto the Sprite geometry to adjust how much influence a bone has on the vertices of the Mesh. This affects how the mesh deforms when the character is animated. It is recommended to use the \href{SkinEdToolsShortcuts.html\#weight-tools}{\texttt{ Auto Weights}} tool to auto-\/generate the weights. The {\bfseries{Auto Weights}} tool only generates weights for Sprites that have both a geometry Mesh, and bones intersecting their Mesh\+:
+\begin{DoxyItemize}
+\item The {\bfseries{Generate For All Visible}} button is available when you do not select any specific Sprite. Select it to generate weights for all valid Sprite Meshes in the editor.
+\item The {\bfseries{Generate For Selected}} button is available when you have a Sprite selected in the editor. Select it to generate weights for only the selected Sprite.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Use the \href{SkinEdToolsShortcuts.html\#weight-slider}{\texttt{ Weight Slider}} and \href{SkinEdToolsShortcuts.html\#weight-brush}{\texttt{ Weight Brush}} tools to further adjust the weights of the Mesh vertices.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item To edit which bones influence a Sprite, select it and then go to the \href{SkinEdToolsShortcuts.html\#bone-influence}{\texttt{ Bone Influence}} tool. A list of bones currently influencing the Sprite’s Mesh are listed in this panel at the bottom-\/right of the editor.
+\begin{DoxyItemize}
+\item To remove a bone, select it from the list and select {\bfseries{Remove (-\/)}} at the bottom right of the list.
+
+~\newline
+Select {\bfseries{Remove (-\/)}} at the bottom right of the panel.
+\item To add a bone as an influencer to the currently selected Sprite Mesh, select the bone in the editor window and select {\bfseries{Add (+)}} to add it to the list.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item Test your rigged character by posing it with the \href{SkinEdToolsShortcuts.html\#preview-pose}{\texttt{ Preview Pose}} tool. Move and rotate the different bones to check that the geometry Mesh deforms properly. Previewing poses can also be done while the following tools are selected\+: the {\bfseries{Weight Brush}}, {\bfseries{Weight Slider}}, {\bfseries{Bone Influence}}, {\bfseries{Auto Weights}}, and {\bfseries{Visibility}} tools.
+\begin{DoxyItemize}
+\item To restore a rigged character to its original pose, select {\bfseries{Reset Pose}} from the \href{SkinEdToolsShortcuts.html\#editor-toolbar}{\texttt{ Editor toolbar}}.
+\item Edit the default pose by moving the character bones and joints with the \href{SkinEdToolsShortcuts.html\#editor-toolbar}{\texttt{ Edit Bone}} tool.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+To begin animating, drag the imported character Prefab into the Scene view. \mbox{\hyperlink{namespace_unity}{Unity}} generates a Game\+Object for each Sprite in the Prefab and /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}different Assets and components\char`\"{}. With the new Game\+Object in the Scene, you can begin animating it with the \href{https://docs.unity3d.com/Manual/AnimationSection.html}{\texttt{ Unity animation workflow and tools}}.
+
+After you have /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Character\+Rig.md \char`\"{}setup the animation skeleton and bone weights\char`\"{} for your character, you can reuse the same rigged skeleton with other character Prefabs by using the \href{SkinEdToolsShortcuts.html\#editor-toolbar}{\texttt{ Copy}} and \href{SkinEdToolsShortcuts.html\#editor-toolbar}{\texttt{ Paste}} options on the \href{SkinEdToolsShortcuts.html\#editor-toolbar}{\texttt{ editor toolbar}}. This is useful if you need to quickly create characters that share the same build and animations.
+
+This can only be done if the source and destination Prefabs have the same number of Sprites. The following functions then occur when you {\bfseries{Paste}} the {\bfseries{Copy}} data\+:
+
+
+\begin{DoxyEnumerate}
+\item Copied bone data is pasted to the destination.
+\item Mesh, weights, and bone association of source Sprite(s) are pasted to destination Sprite(s) with the same names.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md76}{}\doxysection{Copy}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md76}
+To copy a Sprite\textquotesingle{}s data, select a Sprite and then select the {\bfseries{Copy}} button to copy the Mesh and bone data associated with that Sprite. If no Sprite is selected, the data of all the Sprites\textquotesingle{} currently in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skinning\+Editor.md \char`\"{}\+Skinning Editor\char`\"{} window is copied.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md77}{}\doxysection{Paste}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md77}
+To paste Sprite data to another Sprite, select the Sprite that should receive the paste data and then select {\bfseries{Paste}}. This will bring up the Paste panel at the bottom right of the editor window\+:
+
+~\newline
+Paste dialog box.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Option}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Option}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Bones}} &Paste bone data.  \\\cline{1-2}
+{\bfseries{Mesh}} &Paste Mesh data.  \\\cline{1-2}
+{\bfseries{Flip X}} &Paste the data but mirrored along the X-\/axis.  \\\cline{1-2}
+{\bfseries{Flip Y}} &Paste the data but mirrored along the Y-\/axis.  \\\cline{1-2}
+\end{longtabu}
+
+
+The {\bfseries{Copy}} and {\bfseries{Paste}} tools behave in the following ways depending on these factors\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Copy from a selected Sprite }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Copy with no Sprite selected  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Copy from a selected Sprite }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Copy with no Sprite selected  }\\\cline{1-3}
+\endhead
+{\bfseries{Paste with a Sprite selected}} &Data from the source Sprite will be copied to the selected destination Sprite. &Data is pasted to all Sprites at the destination with the same name(s) as the respective source Sprites.  \\\cline{1-3}
+{\bfseries{Paste with no Sprite selected}} &No data is pasted. &Data is pasted to all Sprites at the destination with the same name(s) as the respective source Sprites.  \\\cline{1-3}
+\end{longtabu}
+
+
+The Sprite Swap feature opens up several unique ways you can implement for your project. The following are examples of three common ways you can use Sprite Swap\+:
+
+
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+F\+Fanimation.md \char`\"{}\+To create a frame-\/by-\/frame animation\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Character\+Parts.md \char`\"{}\+Changing selected parts of a character\char`\"{} instead of the entire character
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+A\+Swap.md \char`\"{}\+Swapping the entire Sprite Library Asset\char`\"{}
+\end{DoxyItemize}
+
+By using /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Swap\+Intro.md \char`\"{}\+Sprite Swap\char`\"{}, you can create frame-\/by-\/frame style animations by swapping to different Sprites on each frame at runtime. This is useful for simple animations, such as to show a character blinking. It is recommended that you first \href{\#change-the-keyframe-tangent}{\texttt{ change the keyframe tangent}} before continuing with the workflow below\+:
+
+
+\begin{DoxyEnumerate}
+\item In your character Prefab’s {\bfseries{Sprite Library Asset}} (which can be automatically or /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+S\+Manual.md \char`\"{}manually created\char`\"{}), add a new {\bfseries{Category}}. Add the Sprite for each frame of your animation to this Category, and give them each a unique {\bfseries{Label}} name.
+\item Select your character Prefab and drag it into the Scene view.
+\item Open the \href{https://docs.unity3d.com/Manual/AnimationOverview.html}{\texttt{ Animation}} window, and select your character Prefab. Then select the {\bfseries{Add Property}} button, and select the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+R\+Component.md \char`\"{}\+Sprite Resolver component\char`\"{}’s {\bfseries{Label}} property.
+
+
+\item Change the {\bfseries{Label}} property at each keyframe in the Animation window in the order they should appear for your animation. This simulates a frame-\/by-\/frame animation style.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md80}{}\doxysection{Change the Keyframe Tangent}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md80}
+When animating with the Category and Label value of the Sprite Resolver in the Animation window, it is important to change the keyframe’s tangent in the Animation window to {\bfseries{Constant}}.
+
+
+
+This is because the Sprite Resolver component uses the defined string hash value to locate the desired Sprite. If the values between keyframe’s are interpolated, the Sprite Resolver will not be able to resolve and render the correct Sprite.
+
+This documentation contains information on how to quickly rig and animate a 2D character in \mbox{\hyperlink{namespace_unity}{Unity}} with the 2D Animation package and tools. The following package versions are only supported for the following \mbox{\hyperlink{namespace_unity}{Unity}} versions\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{2D Animation package version 4.\+x.\+x}} -\/ \mbox{\hyperlink{namespace_unity}{Unity}} 2020.\+1 or later
+\item {\bfseries{2D Animation package version 3.\+x.\+x}} -\/ \mbox{\hyperlink{namespace_unity}{Unity}} 2019.\+3
+\end{DoxyItemize}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md82}{}\doxysection{2\+D Animation and P\+S\+D Importer integration}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md82}
+You can use the {\bfseries{2D Animation package}} with the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest}{\texttt{ P\+SD Importer}} package to easily import your character artwork from Photoshop into \mbox{\hyperlink{namespace_unity}{Unity}} for animation. The {\bfseries{P\+SD Importer}} is an Asset importer that supports the import of Adobe Photoshop .psb files into \mbox{\hyperlink{namespace_unity}{Unity}} and generating a Prefab made of Sprites based on the source file and its layers (see Adobe’s documentation on \href{https://helpx.adobe.com/photoshop/using/layer-basics.html}{\texttt{ Layer basics}}).
+
+The \href{https://helpx.adobe.com/photoshop/using/file-formats.html\#large_document_format_psb}{\texttt{ .psb}}\href{https://helpx.adobe.com/photoshop/using/file-formats.html\#large_document_format_psb}{\texttt{ file format}} has identical functions as the more common Adobe .psd format, with additional support for much larger image sizes. See the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html}{\texttt{ P\+SD Importer}} package documentation for more information about the importer’s features.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md83}{}\doxysection{Adobe Photoshop P\+S\+B format}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md83}
+For character animation with the {\bfseries{2D Animation package}}, the {\bfseries{P\+SD Importer}} package is required. The P\+SD Importer package currently only imports the {\bfseries{Adobe Photoshop .psb format}}, and does not import the Adobe .psd format. The .psb format has identical functions as .psd, and is able to support larger image sizes.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md84}{}\doxysection{Optional Performance Boost}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md84}
+You can improve the performance of the animated Sprite’s deformation at runtime by installing the \href{https://docs.unity3d.com/Packages/com.unity.burst@latest}{\texttt{ Burst}} and \href{https://docs.unity3d.com/Packages/com.unity.collections@latest}{\texttt{ Collections}} package from the \href{https://docs.unity3d.com/Manual/upm-ui.html}{\texttt{ Package Manager}}. This allows the 2D Animation package to use \mbox{\hyperlink{namespace_burst}{Burst}} compilation to speed up Unity’s processing of Sprite mesh deformation.
+
+
+
+With both packages installed, the Experimental {\bfseries{Enable batching}} setting becomes available in the \href{\#sprite-skin-component}{\texttt{ Sprite Skin component}}. As the implementation of the performance boost might contain bugs, you may switch back to the previous implementation by clearing the {\bfseries{Enable batching}} option.
+
+The package has been tested with \href{https://docs.unity3d.com/Packages/com.unity.burst@latest}{\texttt{ Burst}} version 1.\+1.\+2 and \href{https://docs.unity3d.com/Packages/com.unity.collections@latest}{\texttt{ Collections}} version 0.\+1.\+1-\/preview.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md85}{}\doxysection{Sprite Skin component}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md85}
+When the character Prefab is brought into the Scene view, \mbox{\hyperlink{namespace_unity}{Unity}} automatically adds the {\bfseries{Sprite Skin}} component to any Sprite that have any \href{SkinEdToolsShortcuts.md\#bone-influences}{\texttt{ bone influences}}. This component is required for the bones deform the Sprite Meshes in the Scene view.
+
+To animate a character with the {\bfseries{2D Animation}} package, it is recommended to separate the individual parts of your character onto different \href{https://helpx.adobe.com/photoshop/using/layer-basics.html}{\texttt{ Layers}} in Photoshop (see Example 1). The \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest}{\texttt{ P\+SD Importer}} imports the graphic data from each Photoshop Layer as Sprites, and automatically arranges the Sprites into both a Sprite Sheet, and a Prefab with the Sprites in the Layers’ original positions (see Example 2).
+
+~\newline
+Example 1\+: Layered character artwork in Adobe Photoshop.
+
+~\newline
+Example 2\+: The different parts/\+Layers of the character arranged into a Sprite Sheet.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md87}{}\doxysection{Photoshop file and P\+S\+D Importer settings}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md87}
+It is recommended to prepare your character artwork by separating the character’s various limbs or accessories into separate \href{https://helpx.adobe.com/photoshop/using/layer-basics.html}{\texttt{ layers}}, and arranged into its default pose.
+
+
+\begin{DoxyEnumerate}
+\item Save your artwork as a .psb file in Adobe Photoshop by selecting the {\bfseries{Large Document Format}} under the {\bfseries{Save As}} menu. You can convert an existing .psd file to .psb in the same way.
+\item \href{https://docs.unity3d.com/Manual/ImportingAssets.html}{\texttt{ Import}} the .psb file into \mbox{\hyperlink{namespace_unity}{Unity}} with the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/}{\texttt{ P\+SD Importer}}, which generates a Prefab containing Sprites based on the layers of the source file.
+\item Select the generated character Prefab and go to its Inspector window. In the Inspector window, ensure the following settings are set\+:
+\begin{DoxyItemize}
+\item Set Texture Type to {\bfseries{Sprite(2\+D and U\+I)}}.
+\item Set Sprite Mode to {\bfseries{Multiple}}.
+\item Check the {\bfseries{Mosaic}} checkbox.
+\item Check the {\bfseries{Character Rig}} checkbox.
+\item Check the {\bfseries{Use Layer Grouping}} checkbox if you want to preserve any Layer Groups in the source .psb file.
+
+~\newline
+Importer window settings
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Click {\bfseries{Apply}} to apply the settings. Refer to the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest}{\texttt{ P\+SD Importer}} documentation for more details about specific importer settings.
+
+~\newline
+Labelled 2D Animation Skinning editor tools
+
+The Skinning Editor tools are split-\/up into the following groups\+:
+
+A. \href{\#editor-toolbar}{\texttt{ Editor toolbar}}
+
+B. \href{\#bone-tools}{\texttt{ Bone tools}}
+
+C. \href{\#geometry-tools}{\texttt{ Geometry tools}}
+
+D. \href{\#weight-tools}{\texttt{ Weight tools}}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md89}{}\doxysection{Editor toolbar}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md89}
+This is toolbar that contains the options that affect what is overall visible in the {\bfseries{Skinning Editor}} window, as well as the {\bfseries{Copy}} and {\bfseries{Paste}} functions.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endhead
+~\newline
+\+\_\+\+\_\+\+Reset Pose\+\_\+\+\_\+ &Shift + 1 &Restore a character’s bones and joints to their original positions.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Toggle View Mode\+\_\+\+\_\+ &Shift + 2 &Switch between the {\bfseries{Character}} and {\bfseries{Sprite Sheet}} view modes.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Copy\+\_\+\+\_\+ &Ctrl + C &Copies the bone and mesh data from the current selection.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Paste\+\_\+\+\_\+ &Ctrl + V &Pastes the copied bone and mesh data to the current selection.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Paste\+\_\+\+\_\+ &Shift + B &Use this shortcut to show additional pasting options.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Visibility\+\_\+\+\_\+ &Shift + P &Toggles the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Vis.md \char`\"{}\+Sprite visibility panel\char`\"{}, which controls the visibility of the Sprite Meshes and bones in the editor window.  \\\cline{1-3}
+{\bfseries{Toggle Tool Text}} &Shift + \`{} &Show or hide text on tool buttons.  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md90}{}\doxysection{Bone tools}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md90}
+Use the {\bfseries{Bone Tools}} to create and edit the bones of your character and their hierarchy.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endhead
+~\newline
+\+\_\+\+\_\+\+Preview Pose\+\_\+\+\_\+ &Shift + Q &Preview character poses after rigging.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Edit Bone\+\_\+\+\_\+ &Shift + W &Reposition the bones into a new position. These changes are automatically saved as the default bind pose for the Restore Bind Pose tool.\+Sprite geometry does not deform with the bones in this mode, even if the bones are attached as influencers.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Create Bone\+\_\+\+\_\+ &Shift + E &Click and drag to create bones.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Split Bone\+\_\+\+\_\+ &Shift + R &Splits the selected bone.  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md91}{}\doxysubsection{Bone panel}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md91}
+The {\bfseries{Bone panel}} appears at the bottom right of the editor window when you have a bone selected.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Name}} &Displays the name of the selected bone. Enter a new name here to rename the selected bone.  \\\cline{1-2}
+{\bfseries{Depth}} &Displays the Depth value of the selected bone that determines its render order, or enter a new value (which can be negative) to change the render order. See the \href{SpriteVis.html\#bone-tab-and-hierarchy-tree}{\texttt{ bone tab and hierarchy tree}} page for more information about how the Depth value affect the way the Sprite Mesh is rendered and deformed.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md92}{}\doxysection{Geometry tools}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md92}
+Use the {\bfseries{Geometry tools}} to generate and edit the meshes of the different Sprites that make up your character.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endhead
+~\newline
+\+\_\+\+\_\+\+Auto Geometry\+\_\+\+\_\+ &Shift + A &Select to auto-\/generate Meshes for Sprites. When this tool is selected, the \href{\#geometry-panel}{\texttt{ Geometry panel}} becomes available at the bottom-\/right of the {\bfseries{Skinning Editor}}.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Edit Geometry\+\_\+\+\_\+ &Shift + S &Edit generated Meshes by repositioning vertices.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Create Vertex\+\_\+\+\_\+ &Shift + D &Create new vertices to create geometry.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Create Edge\+\_\+\+\_\+ &Shift + G &Create new edges to create geometry.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Split Edge\+\_\+\+\_\+ &Shift + H &Split an existing edge into two.  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md93}{}\doxysubsection{Geometry panel}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md93}
+The {\bfseries{Geometry panel}} is only visible when {\bfseries{Auto Geometry}} is enabled. It contains the available settings that affect how the geometry of selected Sprites are generated.
+
+~\newline
+Visible only when Auto Geometry is enabled.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Outline Detail}} &Use the slider to adjust the accuracy of the generated geometry’s outline to the outline of the Sprite. Smaller values create simpler outlines, while larger values create denser outlines that fit to the Sprite’s outline more accurately.  \\\cline{1-2}
+{\bfseries{Alpha Tolerance}} &Use the slider to set the alpha value threshold to consider when generating geometry. Pixels with an alpha value lower than the set tolerance value are considered transparent during outline detection when the geometry is generated.  \\\cline{1-2}
+{\bfseries{Subdivide}} &Use the slider to adjust the tessellation of the Sprite Mesh by adding or decreasing the number of vertices inside the generated Mesh.  \\\cline{1-2}
+{\bfseries{Weights}} &Enable to automatically assign weights between the generated geometry Mesh and nearby bones.  \\\cline{1-2}
+{\bfseries{Generate For Selected/\+Generate For All Visible}} &Select this button to generate a geometry Mesh for selected Sprites based on the property settings above. To generate geometry for all Sprites in the Skinning Editor, do not have any Sprite selected when you select this button.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md94}{}\doxysection{Weight tools}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md94}
+Vertices in the generated geometry meshes are influenced by different bones which affect how the meshes deform during animation. The percentage of influences from different bones for each vertex is contained in the weight information assigned to that vertex, which you can control with the following weight tools.
+
+To add weights to your Sprites, you can first ensure that there are \href{\#bone-tools}{\texttt{ bones}} overlaying the Sprites and \href{\#geometry-tools}{\texttt{ geometry}} has been generated.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Tool}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Default Shortcut}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-3}
+\endhead
+~\newline
+\+\_\+\+\_\+\+Auto Weights\+\_\+\+\_\+ &Shift + Z &Auto-\/generate weights between the geometry and bones. When this tool is selected, the \href{\#weights-panel}{\texttt{ Weights panel}} becomes available at the bottom-\/right of the {\bfseries{Skinning Editor}} that displays the available settings and the option to generate weights for  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Weight Slider\+\_\+\+\_\+ &Shift + X &Use the slider to adjust weights.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Weight Brush\+\_\+\+\_\+ &Shift + N &Adjust weights by painting with a brush.  \\\cline{1-3}
+~\newline
+\+\_\+\+\_\+\+Bone Influence\+\_\+\+\_\+ &Shift + V &Select which bones influence a Sprite.  \\\cline{1-3}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md95}{}\doxysubsection{Weights panel}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md95}
+
+
+The weights panel appears at the lower-\/right of the Sprite Editor window when {\bfseries{Auto Weights}} is selected.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Associate Bones}} &Select this box to automatically associate bones to the Sprite geometry they overlay.  \\\cline{1-2}
+{\bfseries{Generate/\+Generate All}} &Select this button to generate weights for the currently selected Sprite, or for all Sprites if no Sprite is selected. This does not do anything if \href{\#geometry-tools}{\texttt{ geometry has not been generated}} for the Sprites, or if no bones are associated with the Sprite geometry.  \\\cline{1-2}
+{\bfseries{Normalize}} &Normalizes the weights of the selected Sprite, or all Sprites if no specific Sprite is selected.  \\\cline{1-2}
+{\bfseries{Clear}} &Clear the weights of the selected Sprite, or of all Sprites if no specific Sprite is selected.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md96}{}\doxysubsection{Weight Slider}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md96}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Mode}} &The current behavior of the {\bfseries{Weight Slider}} tool.  \\\cline{1-2}
+~~~~Add and Subtract &Use the slider to increase or decrease the selected bone’s (currently displayed in the {\bfseries{Bone}} property) influence on selected vertices. {\itshape Increasing in}  \\\cline{1-2}
+~~~~Grow and Shrink &Use the slider to increase or decrease the weight on vertices that are already influenced by the selected bone.  \\\cline{1-2}
+~~~~Smooth &Averages the weights of all vertices with their neighbors to create an even distribution of weight across all vertices.  \\\cline{1-2}
+{\bfseries{Bone}} (unavailable if {\bfseries{Mode $>$ Smooth}}) &Displays the currently selected bone. Use the drop-\/down menu to select a different bone, or select another bone  \\\cline{1-2}
+{\bfseries{Normalize}} &Select this to ensure the total normalized weight of all vertices of a selected Sprite mesh is equal to one.  \\\cline{1-2}
+{\bfseries{Amount}} &Amount of weight applied on selected vertices.  \\\cline{1-2}
+{\bfseries{Vertex Weight}} &Adjust the bone weights of selected vertices.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md97}{}\doxysubsection{Weight Brush}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md97}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Property}} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\bfseries{Function}}  }\\\cline{1-2}
+\endhead
+{\bfseries{Mode}} &The current behavior mode of the weights tool.  \\\cline{1-2}
+~~~~Add and Subtract &Use the slider to increase or decrease the influence on vertices around the selected bone.  \\\cline{1-2}
+~~~~Grow and Shrink &Use the slider to increase or decrease the influence on vertices that are already affected by the selected bone.  \\\cline{1-2}
+~~~~Smooth &Averages the weights of vertices with their neighbors to create a smoother distribution of weights.  \\\cline{1-2}
+{\bfseries{Bone}} &The bone that the Brush is painting influence for. Select a different bone via the drop-\/down menu.  \\\cline{1-2}
+{\bfseries{Normalize}} &Enable to ensure the normalized weight of painted vertices will equal to 1.  \\\cline{1-2}
+{\bfseries{Size}} &Size of the weight brush cursor.  \\\cline{1-2}
+{\bfseries{Hardness}} &Amount of weight applied by the brush per brushstroke. Higher values increase the weight per brushstroke, up to the maximum of 100 where the full weight is applied at once.  \\\cline{1-2}
+{\bfseries{Step}} &Number of increments needed to apply the full weight of brush.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md98}{}\doxysubsection{Bone Influences panel}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md98}
+The {\bfseries{Bone Influences panel}} displays a list of bones that are currently influencing the selected Sprite Mesh.
+
+
+
+When the Skinning Editor is set to \href{\#editor-toolbar}{\texttt{ Character mode}}, the Bone Influences panel allows you to add a bone to the list which includes its influence in the deformation of the selected Sprite’s mesh, or remove a bone from the list which removes its influence instead.
+
+To add a bone to the list, select the bone in the {\bfseries{Skinning Editor}} window and then select {\bfseries{Add (+}}) at the bottom-\/right of the panel. To remove a bone from the list, select the bone in the list or in the editor window and then select {\bfseries{Remove (-\/)}}.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md99}{}\doxysubsubsection{Rearranging bone order}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md99}
+You can rearrange the bone order in the Bone Influences panel by selecting and the dragging the respective bone entries up or down the list.
+
+
+
+The order of the bones in the Bone Influences panel determines the order of the bones on the {\bfseries{Sprite Skin \+\_\+\+\_\+component. This is especially important when replacing the Sprite for deformation in the \+\_\+\+\_\+\+Sprite Renderer}}, such as when using /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Swap\+Intro.md \char`\"{}\+Sprite Swap\char`\"{}, as you can ensure the bone order remains the same between the Sprites and that the correct Transform drives the correct deformation.
+
+
+
+The {\bfseries{Skinning Editor}} is available as a module in the {\bfseries{Sprite Editor}} after you install the {\bfseries{2D Animation}} package. You can use the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skin\+Ed\+Tools\+Shortcuts.md \char`\"{}available tools\char`\"{} in the Skinning Editor to create the \href{SkinEdToolsShortcuts.html\#bone-tools}{\texttt{ bones}} of the animation skeleton, generate and edit the mesh \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ geometry}} of your character, and adjust the \href{SkinEdToolsShortcuts.html\#weight-tools}{\texttt{ weights}} used to bind the bones to the Sprite meshes.
+
+To open your imported character in the Skinning Editor\+:
+
+
+\begin{DoxyEnumerate}
+\item Select the character \href{https://docs.unity3d.com/Manual/Prefabs.html}{\texttt{ Prefab}} created after importing your character with the P\+SD Importer.
+\item Select the Prefab and go to its Inspector window. Select the {\bfseries{Sprite Editor}} button to open the Prefab in the Sprite Editor.
+\item In the Sprite Editor, open the drop-\/down menu at the upper left of the editor window and select the {\bfseries{Skinning Editor}} module.
+
+
+\end{DoxyEnumerate}
+
+See the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skin\+Ed\+Tools\+Shortcuts.md \char`\"{}\+Editor tools and shortcuts\char`\"{} page for more information about the different features and tools available in the Skinning Editor.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md101}{}\doxysection{How to select a Sprite in the editor}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md101}
+To select a Sprite in the Skinning Editor window\+:
+
+
+\begin{DoxyEnumerate}
+\item Double-\/click a Sprite to select it in the editor window. An orange outline appears around the Sprite that is selected (you can change the outline color in /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Tool\+Pref.md \char`\"{}\+Tool Preferences\char`\"{}.
+\item If the Sprite you want to select is behind other Sprites, hover over where the Sprite is, and double-\/click to cycle through all Sprites at the cursor location until you reach the desired Sprite.
+\item Double-\/click on a blank area in the editor window to deselect all Sprites.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md102}{}\doxysection{How to select bone or Mesh vertices in the editor}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md102}
+To select a bone or mesh vertices when using the \href{SkinEdToolsShortcuts.html\#bone-tools}{\texttt{ Bone}} and \href{SkinEdToolsShortcuts.html\#geometry-tools}{\texttt{ Geometry tools}}\+:
+
+
+\begin{DoxyEnumerate}
+\item Click a bone or mesh vertex to select it specifically.
+\item Draw a selection rectangle over multiple bones or vertices to select them all at once.
+\item Right click to deselect any selected bone or mesh vertices.
+\end{DoxyEnumerate}
+
+The {\bfseries{Sprite Library Asset}} contains the {\bfseries{Categories}} and {\bfseries{Labels}} that a character Prefab refers to to determine what Sprites are rendered. This allows you to group similar or interchangeable Sprites together that can be used for /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Swap\+Intro.md \char`\"{}\+Sprite Swapping\char`\"{}.
+
+\mbox{\hyperlink{namespace_unity}{Unity}} automatically generates a Sprite Library Asset as a sub-\/\+Asset of the Prefab when you create any \href{SpriteVis.html\#sprite-tab}{\texttt{ Categories or Labels}} while editing the character Prefab. To /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+S\+Manual.md \char`\"{}manually\char`\"{} create a {\bfseries{Sprite Library Asset}}, go to {\bfseries{Assets}} $>$ {\bfseries{Create}} $>$ {\bfseries{Sprite Library Asset}}.
+
+~\newline
+Inspector view of Sprite Library Asset
+
+Select {\bfseries{Add (+)}} at the bottom-\/right of the {\bfseries{Sprite Library Asset}} to add a new {\bfseries{Category}}. Select {\bfseries{Remove (-\/)}} to remove a Category instead.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Category Name}} &Enter a Category name. Category names must be unique.  \\\cline{1-2}
+{\bfseries{Category List}} &Use these settings to define the number of Sprites you want to include, and the label for each Sprite.  \\\cline{1-2}
+~~~~{\bfseries{Size}} &Enter the number of Labels you want to assign to this Category.  \\\cline{1-2}
+~~~~{\bfseries{Label}} &Enter a name for the registered Sprite. This Label must be unique from other Labels in the same Category.  \\\cline{1-2}
+~~~~{\bfseries{Sprite}} &Select or drag a Sprite onto this box to register it as the Sprite reference for this Label.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md104}{}\doxysection{Sprite Library component}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md104}
+The {\bfseries{Sprite Library component}} is attached to the root Game\+Object of the character Prefab. Assign your preferred /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} to the {\bfseries{Sprite Library Asset}} box that the \href{https://docs.unity3d.com/Manual/class-SpriteRenderer.}{\texttt{ Sprite Renderers}} of the Game\+Objects within the Prefab will refer to and render respectively.
+
+~\newline
+Inspector view of Sprite Component
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Sprite Library Asset}} &Set this to the Sprite Library Asset you want to use for this charcter Prefab.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md105}{}\doxysection{Sprite Resolver component}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md105}
+The {\bfseries{Sprite Resolver component}} is attached to each Game\+Object in the Prefab. The component pulls information from the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} (assigned to the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Component.md \char`\"{}\+Sprite Library component\char`\"{} at the root of the Prefab). The component contains two properties -\/ \href{SpriteVis.html\#sprite-tab}{\texttt{ Category and Label}} -\/ and a visual Variant Selector that displays thumbnails of the Sprites contained in the Sprite Library Asset.
+
+~\newline
+Inspector view of Sprite Resolver Component, with the variant visual selector.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Category}} &Select which Category you want to use a Sprite from for this Game\+Object.  \\\cline{1-2}
+{\bfseries{Label}} &Select the Label of the Sprite you want to use for this Game\+Object.  \\\cline{1-2}
+\end{longtabu}
+
+
+Select the Sprite you want the {\bfseries{Sprite Renderer}} to render by selecting from the {\bfseries{Category}} and {\bfseries{Label}} dropdown menus, or select the Sprite directly in the visual Variant Selector.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md106}{}\doxysection{Sprite Skin component}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md106}
+When the character Prefab is brought into the Scene view, the P\+SD Importer automatically adds the {\bfseries{Sprite Skin}} component to any Sprite that have any \href{SkinEdToolsShortcuts.md\#bone-influences}{\texttt{ bone influences}}.
+
+If swapping each Sprite individually takes too much effort, you can instead swap the entire {\bfseries{Sprite Library Asset}} to another one containing alternate Sprites.
+
+The following example shows how to switch from a Sprite Library Asset of color Sprites to another one containing identical Sprites but in grayscale\+:
+
+~\newline
+\+\_\+\+\_\+\+Left\+:\+\_\+\+\_\+ Prefab with the colored Sprite Library Asset. {\bfseries{Right\+:}} Prefab with the grayscale Sprite Library Asset.
+
+
+\begin{DoxyEnumerate}
+\item Create variants of your character artwork. In this example, a grayscale variant of the original artwork was created in Photoshop (or any other compatible image editor).
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Preparing\+Artwork.md \char`\"{}\+Import\char`\"{} both .psb files into the \mbox{\hyperlink{namespace_unity}{Unity}} Editor. Both become separate Prefabs in the Asset window.
+\item Select the color Prefab and open it in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skinning\+Editor.md \char`\"{}\+Skinning Editor\char`\"{}. Assign each Sprite of the character to a unique \href{SpriteVis.html\#how-to-create-a-category}{\texttt{ Category}}. It is suggested to name each {\bfseries{Category}} and {\bfseries{Label}} after the respective body part of the character. Apply the changes once you are ready, and exit the {\bfseries{Sprite Editor}}.
+
+~\newline
+The Category and Label names for the color Prefab.
+\item Select the grayscale Prefab, and give its corresponding Sprites the same {\bfseries{Category}} and {\bfseries{Label}} names as the color Prefab.
+
+~\newline
+Give the same Category and Label names to the grayscale Prefab.
+\item Drag the color Prefab into the Scene view, and go to the root Game\+Object. The \href{SLAsset.html\#sprite-library-component}{\texttt{ Sprite Library component}} is attached to the root Game\+Object and refers to the default {\bfseries{Sprite Library Asset}} that \href{SpriteSwapIntro.html\#how-unity-generates-sprite-swap-assets-and-components}{\texttt{ Unity automatically generated}}. ~\newline
+
+
+~\newline
+The color Sprite Library Asset.
+\item With the Inspector window the color Prefab remaining open, go to the Asset window and expand the grayscale Prefab. Find the grayscale Prefab {\bfseries{Sprite Library Asset}} and drag it to the color Prefab‘s {\bfseries{Sprite Library Asset}} box, which replaces the color Prefab’s original Sprite Library Asset.
+\item The Sprites of the color Prefab should have switched to their grayscale counterparts of the grayscale Sprite Library Asset.
+
+~\newline
+The grayscale version of the color Sprite Library Asset.
+\end{DoxyEnumerate}
+
+Use the {\bfseries{Sprite Library}} component to connect the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} to a Game\+Object. This allows you to access all of the Sprites within the {\bfseries{Sprite Library Asset}} and display them on the \href{https://docs.unity3d.com/Manual/class-SpriteRenderer.}{\texttt{ Sprite Renderer}} of the Game\+Object.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Sprite Library Asset}} &Set this to the Sprite Library Asset you want to use on this Game\+Object.  \\\cline{1-2}
+\end{longtabu}
+
+
+{\bfseries{Sprite Swap}} is an experimental feature that enables you to change a Game\+Object’s rendered Sprite within the same character Prefab. This enables you to quickly and easily create multiple characters that look different while /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Copy\+Paste\+Skele.md \char`\"{}reusing existing bone and Mesh data\char`\"{}. You can also use Sprite Swap to switch the displayed Sprite on each frame at run time to create /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+F\+Fanimation.md \char`\"{}frame-\/by-\/frame animation\char`\"{}.
+
+The workflow for implementing Sprite Swap differs if you are using the workflow that is \href{\#sprite-swap-and-2d-animation-integration}{\texttt{ integrated with 2D Animation}}, or if you are /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+S\+Manual.md \char`\"{}manually setting up\char`\"{} the Sprite Swap components.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md110}{}\doxysection{Sprite Swap Assets and components}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md110}
+The following Assets and components are part of the Sprite Swap process\+:
+
+
+\begin{DoxyEnumerate}
+\item The /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} contains the \href{SpriteVis.html\#sprite-tab}{\texttt{ Categories and Labels}} of the Sprites.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item The \href{SLAsset.html\#sprite-library-component}{\texttt{ Sprite Library component}} shows the currently referred to {\bfseries{Sprite Library Asset}}.
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item The \href{SLAsset.html\#sprite-resolver-component}{\texttt{ Sprite Resolver component}} is used to request a Sprite registered to the {\bfseries{Sprite Library Asset}} by referring to the {\bfseries{Category}} and {\bfseries{Label}} value of the desired Sprite.
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md111}{}\doxysection{How Unity generates Sprite Swap Assets and components}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md111}
+\mbox{\hyperlink{namespace_unity}{Unity}} generates the various /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Swap\+Intro.md \char`\"{}\+Sprite Swap\char`\"{} components in the following steps\+:
+
+
+\begin{DoxyEnumerate}
+\item When you import a .psb file with the \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html}{\texttt{ P\+SD Importer}}, \mbox{\hyperlink{namespace_unity}{Unity}} generates a Prefab containing a Sprite for each Layer in the source file.
+\item If you create any \href{SpriteVis.html\#sprite-tab}{\texttt{ Categories or Labels}} while editing the character Prefab, \mbox{\hyperlink{namespace_unity}{Unity}} automatically generates a /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} as a sub-\/\+Asset of the Prefab.
+\item When the Prefab is brought into the Scene view, \mbox{\hyperlink{namespace_unity}{Unity}} generates a Game\+Object for each Sprite in the Prefab that does {\itshape not} belong to a \href{SpriteVis.html\#sprite-tab}{\texttt{ Category}}. However if the Sprite is the first \href{SpriteVis.html\#sprite-tab}{\texttt{ Label}} in a {\bfseries{Category}}, then \mbox{\hyperlink{namespace_unity}{Unity}} will generate a Game\+Object for the Sprite as well.
+\item If the Prefab has a {\bfseries{Sprite Library Asset}} sub-\/\+Asset, then \mbox{\hyperlink{namespace_unity}{Unity}} attaches the \href{SLAsset.html\#sprite-library-component}{\texttt{ Sprite Library component}} to the root Game\+Object which is set to reference the {\bfseries{Sprite Library Asset}} created in step 1 by default.
+\item \mbox{\hyperlink{namespace_unity}{Unity}} attaches the \href{SLAsset.html\#sprite-resolver-component}{\texttt{ Sprite Resolver component}} to all {\bfseries{Sprite}} Game\+Objects that belong to a Category.
+\end{DoxyEnumerate}
+
+Refer to the respective component pages for more information on their functions and properties.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md112}{}\doxysection{Sprite Swap and 2\+D Animation integration}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md112}
+{\bfseries{Sprite Swap}} is integrated with the 2D Animation workflow. You must install the following packages or newer to use the Sprite Swap feature\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://docs.unity3d.com/Packages/com.unity.2d.animation@latest/index.html}{\texttt{ 2D Animation version 2.\+2.\+0-\/preview.\+1}}
+\item \href{https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html}{\texttt{ P\+S\+D\+Importer version 1.\+2.\+0-\/preview.\+1}}
+\end{DoxyItemize}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md113}{}\doxysection{Skeletal animation limitations}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md113}
+To ensure Sprite Swap works correctly with skeletal animation, the skeleton must be identical between the Sprites being swapped. Use the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Copy\+Paste\+Skele.md \char`\"{}\+Copy and Paste\char`\"{} tools to duplicate the skeleton rig from one Sprite to the other Sprite(s) to ensure they can be swapped smoothly.
+
+Toggle the {\bfseries{Sprite Visibility}} panel by selecting the {\bfseries{Visibility tool}} button along the top right of the editor window\+:
+
+
+
+The panel appears on the right-\/side of the editor window. It has two sliders at the top that control the visibility of the bones and Sprite meshes within the editor window. Move either slider further to the left to decrease the visibility of the bones or meshes respectively, and to the right to increase their visibility.
+
+
+
+The panel has two main tabs -\/ {\bfseries{Bone}} and {\bfseries{Sprite}}. The Bone tab displays the \href{\#bone-tab-and-hierarchy-tree}{\texttt{ Bone hierarchy}} of the character Prefab, and the Sprite tab displays the names of the Sprites, their grouping hierarchy, and {\bfseries{Category}} and {\bfseries{Label}} information.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md115}{}\doxysection{Bone tab and hierarchy tree}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md115}
+~\newline
+The Bone tab selected.
+
+Select the {\bfseries{Bone}} tab to view the list of bones in the character Prefab. The list reflects the hierarchy of bones you created with the \href{SkinEdToolsShortcuts.html\#bone-tools}{\texttt{ Bone tools}}. You can reparent and reorder bones directly from the bone tab by dragging selected bones up and down the list. Toggle the visibility of each bone by selecting the  icon next to it.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+ &Toggle the visibility of each bone by selecting this icon next to the bone.  \\\cline{1-2}
+{\bfseries{Bone}} &The name of the Bone.  \\\cline{1-2}
+{\bfseries{Depth}} &The render order of bones that are influencing the same Sprite Mesh. The parts of the Mesh that is influenced by a bone with higher bone Depth value will overlay the parts influenced by bones with lower Depth value. ~\newline
+A bone’s Depth value is 0 by default. To set a bone’s Depth value, select one of the available \href{SkinEdToolsShortcuts.html\#bone-tools}{\texttt{ Bone tools}} and then select one of the bones. Find the \href{SkinEdToolsShortcuts.html\#bone-panel}{\texttt{ Bone panel}} at the bottom right of the window, and enter the desired value to its {\bfseries{Depth}} property box.  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md116}{}\doxysection{Sprite tab}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md116}
+Select the {\bfseries{Sprite tab}} to see the list of Sprites that make up the character Prefab in the Skinning editor window. The names and order of the Sprites mirror their names, layer and grouping order in the original source file.
+
+
+
+The Sprite tab has two additional columns for the {\bfseries{Category}} and {\bfseries{Label}} of each Sprite in the character Prefab. A {\bfseries{Category}} contains a selection of Sprites that are differentiated by their {\bfseries{Labels}}, and this information is contained in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} that is a sub-\/\+Asset of the character Prefab. Changing the Category and Labels of Sprites allows you to /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+A\+Swap.md \char`\"{}\+Sprite Swap\char`\"{}, which allows you to create /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+F\+Fanimation.md \char`\"{}frame-\/by-\/frame animations\char`\"{} and /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Examples.md \char`\"{}other uses\char`\"{}.\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md117}{}\doxysection{How to create a Category}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md117}
+
+\begin{DoxyEnumerate}
+\item Go to the row of the Sprite, open the drop-\/down menu on the Category column and select {\bfseries{New}}.
+
+
+\item Enter a name for the Category. This name must be unique among other Categories within the same Library Asset.
+\item When you enter a Category name, \mbox{\hyperlink{namespace_unity}{Unity}} automatically assigns that Sprite a Label based on the Sprite’s name, which you can edit. Labels belonging to the same Category must have unique names.
+\item To assign the Sprite to an existing Category, open the drop-\/down menu on the Category column along its roll, and select from the list of existing Categories.
+
+
+\end{DoxyEnumerate}\hypertarget{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md118}{}\doxysection{Context menu options}\label{md__space_survival__library__package_cache_com_8unity_82d_8animation_0d3_82_82__documentation_autotoc_md118}
+There are context menu options available from the Visibility panel to create Categories and Labels based on the imported groups and layer names of the Sprites. Open the context menu by right-\/clicking the row of the Sprite or Group you want to convert to a Category.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Option }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Option }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Convert Group to Category}} &This option is only available if the selected row is a Group that contains multiple Sprites. Select this option to assign all Sprites in the group to a new Category. \mbox{\hyperlink{namespace_unity}{Unity}} automatically names the new Category with the root Group name.  \\\cline{1-2}
+{\bfseries{Convert Layer to Category}} &Select this option to assign the Sprite to a Category based on the Sprite’s name. \mbox{\hyperlink{namespace_unity}{Unity}} also uses the Sprite\textquotesingle{}s name as the Label name.  \\\cline{1-2}
+{\bfseries{Clear All Category}} &Select this to remove all selected Sprites from their currently assigned Categories.  \\\cline{1-2}
+\end{longtabu}
+
+
+The {\bfseries{Sprite Resolver}} component pulls information from the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} set in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Component.md \char`\"{}\+Sprite Library component\char`\"{} on the same Game\+Object. It automatically applies the selected Sprite to the \href{https://docs.unity3d.com/Manual/class-SpriteRenderer.html}{\texttt{ Sprite Renderer}}. This allows you to swap the Sprite Renderer’s Sprite to other ones in the Sprite Library Asset during run time.
+
+The component contains two properties -\/ {\bfseries{Category}} and {\bfseries{Label}} -\/ as well as a visual Variant Selector that displays thumbnails of the Sprites contained in the Sprite Library Asset.
+
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Property }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Category}} &Select which Category you want to use a Sprite from for this Game\+Object.  \\\cline{1-2}
+{\bfseries{Label}} &Select the Label of the Sprite you want to use for this Game\+Object.  \\\cline{1-2}
+\end{longtabu}
+
+
+You can select the Sprite by setting to the component to its {\bfseries{Category}} and {\bfseries{Label}}, or select the Sprite directly with the visual Variant Selector. When either of the Sprite Resolver’s properties change, the Sprite Resolver component checks the hierarchy for a Sprite Library component on the same Game\+Object. Once it finds the Sprite Library component, the Sprite Resolver requests the Sprite with the matching {\bfseries{Category}} and {\bfseries{Label}} values.
+
+When a \href{SpriteVis.html\#how-to-create-a-category}{\texttt{ Category or Label}} is created from the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Vis.md \char`\"{}\+Sprite Visibility panel\char`\"{} in the {\bfseries{Skinning Editor}}, \mbox{\hyperlink{namespace_unity}{Unity}} automatically \href{SpriteSwapIntro.html\#how-unity-generates-sprite-swap-assets-and-components}{\texttt{ generates}} a {\bfseries{Sprite Library Asset}} as a sub-\/\+Asset of the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Preparing\+Artwork.md \char`\"{}character Prefab\char`\"{} that contains the Categories and Labels created for that Prefab.
+
+You can create a {\bfseries{Sprite Library Asset}} manually and choose which Game\+Object refers to it, by following the steps below\+:
+
+
+\begin{DoxyEnumerate}
+\item Select the {\bfseries{Sprite Library Asset}} from the Asset creation menu by going to\+: {\bfseries{Asset $>$ Create $>$ Sprite Library Asset}}.
+
+
+\item Select the new Sprite Library Asset and go to its Inspector window. The list of Categories and Labels available in the Asset is displayed.
+
+
+\item Select {\bfseries{Add (+)}} at the bottom-\/right of the List to add a new {\bfseries{Category}}. Enter a name into the ‘\+New Category’ box. Each Category in the same /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset\char`\"{} must have a name unique from others.
+
+
+\item Next, create an empty Game\+Object (menu\+: {\bfseries{Right-\/click on the Hierarchy window $>$ Create Empty}}). Select it and then add the \href{https://docs.unity3d.com/Manual/class-SpriteRenderer.html}{\texttt{ Sprite Renderer}} component to it.
+
+
+\item Add the \href{SLAsset.html\#sprite-library-component}{\texttt{ Sprite Library component}} to the same Game\+Object. Assign the Sprite Library Asset created in step 3 to the {\bfseries{Sprite Library Asset}} box.
+
+
+\item Add the \href{SLAsset.html\#sprite-resolver-component}{\texttt{ Sprite Resolver component}} to the same Game\+Object.
+
+
+
+Open the {\bfseries{Category}} drop-\/down menu, and select a Category you created in step 3. The component will then display a {\bfseries{Label}} drop-\/down menu and a Visual Variant Selector that displays thumbnails of the different Sprites available in the Category.
+
+
+\item When you select a Sprite in the {\bfseries{Sprite Resolver}} component, \mbox{\hyperlink{namespace_unity}{Unity}} automatically replaces the current Sprite in the\href{https://docs.unity3d.com/Manual/class-SpriteRenderer.html}{\texttt{ Sprite Renderer}} component with the one you have selected.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/index.md \char`\"{}\+Introduction to 2\+D Animation\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Preparing\+Artwork.md \char`\"{}\+Preparing and importing artwork\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skinning\+Editor.md \char`\"{}\+Skinning Editor\char`\"{}
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Tool\+Pref.md \char`\"{}\+Tool Preferences\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skin\+Ed\+Tools\+Shortcuts.md \char`\"{}\+Editor tools and shortcuts\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Vis.md \char`\"{}\+Sprite Visiblity panel\char`\"{}
+\end{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Character\+Rig.md \char`\"{}\+Character skinning and weighting workflow\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Copy\+Paste\+Skele.md \char`\"{}\+Animating your character\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Sprite\+Swap\+Intro.md \char`\"{}\+Sprite Swap workflow -\/ Experimental Feature\char`\"{}
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+Asset.md \char`\"{}\+Sprite Library Asset and other components\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+S\+Manual.md \char`\"{}\+Sprite Swap manual setup\char`\"{}
+\end{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Examples.md \char`\"{}\+Usage examples\char`\"{}
+\begin{DoxyItemize}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+F\+Fanimation.md \char`\"{}\+Frame-\/by-\/frame animation\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Character\+Parts.md \char`\"{}\+Changing parts of a character\char`\"{}
+\item /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+S\+L\+A\+Swap.md \char`\"{}\+Swapping Sprite Library Assets\char`\"{}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Adjust the appearance of the 2D Animation tools in the Skinning Editor by going to its Preferences menu\+: {\bfseries{Edit}} $>$ {\bfseries{Preferences}} $>$ {\bfseries{2D}} $>$ {\bfseries{Animation}}.
+
+~\newline
+Tool Preferences
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Setting }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Setting }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Function  }\\\cline{1-2}
+\endhead
+{\bfseries{Hide Tool Text}} &Enable this option to hide the tool text to have a compact view.  \\\cline{1-2}
+{\bfseries{Selected Outline Color}} &Customize the outline color of selected Sprite and bone.  \\\cline{1-2}
+{\bfseries{Sprite Outline Size}} &Use the slider to adjust the outline thickness of a selected Sprite.  \\\cline{1-2}
+{\bfseries{Bone Outline Size}} &Use the slider to adjust the outline thickness of a selected bone.  \\\cline{1-2}
+\end{longtabu}
+
+
+Enable {\bfseries{Hide Tool Text}} to have only the tool icons visible in the /\+Users/ray/\+Documents/\+Git\+Hub/\+Game\+Dev/\+Space\+Survival/\+Library/\+Package\+Cache/com.unity.\+2d.\+animation@3.\+2.\+2/\+Documentation$\sim$/\+Skinning\+Editor.md \char`\"{}\+Skinning Editor\char`\"{} window.
+
+ 

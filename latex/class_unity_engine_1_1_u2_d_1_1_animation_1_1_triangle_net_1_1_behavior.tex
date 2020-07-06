@@ -1,0 +1,197 @@
+\hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior}{}\doxysection{Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior Class Reference}
+\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior}\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+
+
+Controls the behavior of the meshing software.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_ade9bf5b16e9fa35b6fd2e9595f6b5a9a}{Behavior}} (bool quality=false, double min\+Angle=20.\+0)
+\begin{DoxyCompactList}\small\item\em Creates an instance of the \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior}{Behavior}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a358cab0e0d32d00ce36ec8dab084c6a2}{Quality}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Quality mesh generation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a47749aef0ab409abcc9f7c1f8cfc8073}{Min\+Angle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Minimum angle constraint. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a127f5f13d3c7890df79cf843abf58380}{Max\+Angle}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Maximum angle constraint. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a459e4c976af44eb25b61ae9fd105c2ae}{Max\+Area}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Maximum area constraint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a3c9dd6da89548cb1ccb152c2d31ecf98}{Var\+Area}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Apply a maximum triangle area constraint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9768e8075cf9448bd1db6eac741b8df5}{Poly}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Input is a Planar Straight Line Graph. \end{DoxyCompactList}\item 
+Func$<$ I\+Triangle, double, bool $>$ \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a4b6a83fe7d07582ac42eea4243ab6697}{User\+Test}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Apply a user-\/defined triangle constraint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_abc7d44a81ed4003ce7e43f4ddb54aa47}{Convex}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Enclose the convex hull with segments. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a5b41c260b8a90ec5e4faea657904ebcb}{Conforming\+Delaunay}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Conforming Delaunay (all triangles are truly Delaunay). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a6ba6357c649410633167737c49ea9569}{No\+Bisect}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Suppresses boundary segment splitting. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a20b3961d60de79128aba5148872b5bf2}{Use\+Boundary\+Markers}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Compute boundary information. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a668e776820410505ee2974df505b7f51}{No\+Holes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Ignores holes in polygons. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9ddc6e1b333e712814be7e281fc4cb63}{Jettison}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Jettison unused vertices from output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the behavior of the meshing software. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_ade9bf5b16e9fa35b6fd2e9595f6b5a9a}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_ade9bf5b16e9fa35b6fd2e9595f6b5a9a}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!Behavior@{Behavior}}
+\index{Behavior@{Behavior}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{Behavior()}{Behavior()}}
+{\footnotesize\ttfamily Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Behavior (\begin{DoxyParamCaption}\item[{bool}]{quality = {\ttfamily false},  }\item[{double}]{min\+Angle = {\ttfamily 20.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates an instance of the \mbox{\hyperlink{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior}{Behavior}} class. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a5b41c260b8a90ec5e4faea657904ebcb}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a5b41c260b8a90ec5e4faea657904ebcb}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!ConformingDelaunay@{ConformingDelaunay}}
+\index{ConformingDelaunay@{ConformingDelaunay}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{ConformingDelaunay}{ConformingDelaunay}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Conforming\+Delaunay\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Conforming Delaunay (all triangles are truly Delaunay). 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_abc7d44a81ed4003ce7e43f4ddb54aa47}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_abc7d44a81ed4003ce7e43f4ddb54aa47}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!Convex@{Convex}}
+\index{Convex@{Convex}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{Convex}{Convex}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Convex\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Enclose the convex hull with segments. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9ddc6e1b333e712814be7e281fc4cb63}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9ddc6e1b333e712814be7e281fc4cb63}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!Jettison@{Jettison}}
+\index{Jettison@{Jettison}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{Jettison}{Jettison}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Jettison\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Jettison unused vertices from output. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a127f5f13d3c7890df79cf843abf58380}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a127f5f13d3c7890df79cf843abf58380}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!MaxAngle@{MaxAngle}}
+\index{MaxAngle@{MaxAngle}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{MaxAngle}{MaxAngle}}
+{\footnotesize\ttfamily double Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Max\+Angle\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Maximum angle constraint. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a459e4c976af44eb25b61ae9fd105c2ae}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a459e4c976af44eb25b61ae9fd105c2ae}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!MaxArea@{MaxArea}}
+\index{MaxArea@{MaxArea}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{MaxArea}{MaxArea}}
+{\footnotesize\ttfamily double Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Max\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Maximum area constraint. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a47749aef0ab409abcc9f7c1f8cfc8073}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a47749aef0ab409abcc9f7c1f8cfc8073}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!MinAngle@{MinAngle}}
+\index{MinAngle@{MinAngle}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{MinAngle}{MinAngle}}
+{\footnotesize\ttfamily double Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Min\+Angle\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Minimum angle constraint. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a6ba6357c649410633167737c49ea9569}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a6ba6357c649410633167737c49ea9569}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!NoBisect@{NoBisect}}
+\index{NoBisect@{NoBisect}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{NoBisect}{NoBisect}}
+{\footnotesize\ttfamily int Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+No\+Bisect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Suppresses boundary segment splitting. 
+
+0 = split segments 1 = no new vertices on the boundary 2 = prevent all segment splitting, including internal boundaries \mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a668e776820410505ee2974df505b7f51}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a668e776820410505ee2974df505b7f51}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!NoHoles@{NoHoles}}
+\index{NoHoles@{NoHoles}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{NoHoles}{NoHoles}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+No\+Holes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Ignores holes in polygons. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9768e8075cf9448bd1db6eac741b8df5}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a9768e8075cf9448bd1db6eac741b8df5}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!Poly@{Poly}}
+\index{Poly@{Poly}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{Poly}{Poly}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Poly\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Input is a Planar Straight Line Graph. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a358cab0e0d32d00ce36ec8dab084c6a2}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a358cab0e0d32d00ce36ec8dab084c6a2}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!Quality@{Quality}}
+\index{Quality@{Quality}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{Quality}{Quality}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Quality\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Quality mesh generation. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a20b3961d60de79128aba5148872b5bf2}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a20b3961d60de79128aba5148872b5bf2}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!UseBoundaryMarkers@{UseBoundaryMarkers}}
+\index{UseBoundaryMarkers@{UseBoundaryMarkers}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{UseBoundaryMarkers}{UseBoundaryMarkers}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Use\+Boundary\+Markers\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Compute boundary information. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a4b6a83fe7d07582ac42eea4243ab6697}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a4b6a83fe7d07582ac42eea4243ab6697}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!UserTest@{UserTest}}
+\index{UserTest@{UserTest}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{UserTest}{UserTest}}
+{\footnotesize\ttfamily Func$<$I\+Triangle, double, bool$>$ Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+User\+Test\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Apply a user-\/defined triangle constraint. 
+
+\mbox{\Hypertarget{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a3c9dd6da89548cb1ccb152c2d31ecf98}\label{class_unity_engine_1_1_u2_d_1_1_animation_1_1_triangle_net_1_1_behavior_a3c9dd6da89548cb1ccb152c2d31ecf98}} 
+\index{UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}!VarArea@{VarArea}}
+\index{VarArea@{VarArea}!UnityEngine.U2D.Animation.TriangleNet.Behavior@{UnityEngine.U2D.Animation.TriangleNet.Behavior}}
+\doxysubsubsection{\texorpdfstring{VarArea}{VarArea}}
+{\footnotesize\ttfamily bool Unity\+Engine.\+U2\+D.\+Animation.\+Triangle\+Net.\+Behavior.\+Var\+Area\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Apply a maximum triangle area constraint. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+2d.\+animation@3.\+2.\+2/\+Runtime/\+Triangle/Behavior.\+cs\end{DoxyCompactItemize}
