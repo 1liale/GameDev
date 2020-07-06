@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+public class Dialogue
 {
-    private Tuple<string, string>[] lines;
+    private List<Tuple<string, string>> lines;
     private int index;
 
     public void Reset()
@@ -18,7 +19,7 @@ public class Dialogue : MonoBehaviour
 
     public Tuple<string, string> nextLine()
     {
-        if (index >= lines.Length)
+        if (index >= lines.Count)
             return null;
         return lines[++index];
     }
