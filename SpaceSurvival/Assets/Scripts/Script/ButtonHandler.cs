@@ -36,6 +36,12 @@ public class ButtonHandler : MonoBehaviour
         pointer2.GetComponent<SpriteRenderer>().enabled = true;
     }
 
+    public void returnMenu()
+    {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
+    }
+
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

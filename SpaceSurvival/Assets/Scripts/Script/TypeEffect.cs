@@ -8,10 +8,11 @@ public class TypeEffect : MonoBehaviour
     public float delay = 0.08f;
     public string fullText;
     private string currentText = ""; 
-    void Start()
+    
+    public void beginType(string str)
     {
-        StartCoroutine(showText(fullText));
-    }
+        StartCoroutine(showText(str));
+    } 
 
     IEnumerator showText(string str)
     {

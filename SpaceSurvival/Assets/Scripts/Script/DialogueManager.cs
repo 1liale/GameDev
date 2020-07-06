@@ -6,6 +6,11 @@ public class DialogueManager : MonoBehaviour
     private Dialogue dialogue;
     private bool playDialogue;
 
+    private string txtFile = "CharSelection";
+    string txtContent;
+
+    private string[] sections;
+
     public void SetPlay(bool playDialogue)
     {
         this.playDialogue = playDialogue;
@@ -32,5 +37,20 @@ public class DialogueManager : MonoBehaviour
 
             }
         }
+    }
+
+    public string[] getDescription(int option)
+    {
+        string[] curLines = sections[option].Split('\n');
+        Debug.Log("split worked");
+        return curLines;
+    }
+
+    private void loadSelectDialogue()
+    {
+        TextAsset txtAssets = Resources.Load(txtFile) as TextAsset;  
+        txtContent = txtAssets.ToString();
+        sections = txtContent.Split('%');
+        Debug.Log(sections[0]);
     }
 }
