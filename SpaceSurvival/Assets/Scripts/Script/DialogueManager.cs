@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
         return curLines;
     }
 
+    // Reads from CharSelect.txt 
     private void loadSelectDialogue()
     {
         TextAsset txtAssets = Resources.Load(txtFile) as TextAsset;  
