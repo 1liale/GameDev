@@ -5,7 +5,7 @@ Type of game: 2D pixel game
 *Project still under development
 ------------------------------------------------------------
 
-For script documentation, visit https://raywang999.github.io/SpaceSurvivalScriptDocumentation/
+For script documentation, visit https://1liale.github.io/GameDev/
 
 For Developers:
 1. Push to your individual branches (first letter of your name)
