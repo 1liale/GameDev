@@ -60,6 +60,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void displayDescription()
     {
+        Debug.Log(curSelect);
         dialogueManager.LoadDialogue("CharSelection", curSelect);
         dialogueManager.SetPlay(true);
     }
