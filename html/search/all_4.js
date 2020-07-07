@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playerstats_6',['PlayerStats',['../class_player_stats.html',1,'']]]
+  ['fixfont_10',['FixFont',['../class_fix_font.html',1,'']]]
 ];

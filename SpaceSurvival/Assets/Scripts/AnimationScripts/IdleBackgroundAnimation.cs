@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+<summary>Class <c>IdleBackgroundAnimation</c> animates a GameObject to periodically bob vertically and rotate</summary>
+*/
 public class IdleBackgroundAnimation : MonoBehaviour
 {
+    ///<value>Transform component of the GameObject to animate</value>
     public Transform t;
+    //Radians of Bob
     private float br;
+    //Radians of rotation
     private float rr;
-    public float BobAmplitude; // by World coordinates
-    public float RotationAmplitude; //in degrees
-    public float BobTime; //Seconds
-    public float RotationTime; //Seconds
+    ///How far in one vertical direction the object will move. <example><i>E.g. 0.05 moves it up 0.05 world units up, then 0.05 units down.</example></i>
+    public float BobAmplitude; 
+    ///The total amount of degrees the GameObject will rotate 
+    public float RotationAmplitude;
+    ///Time (Seconds) it takes to complete one bob cycle (E.g. move up, down and return to starting position).
+    public float BobTime; 
+    ///Time (Seconds) it takes to complete one rotation cycle.
+    public float RotationTime; 
     private float bx;
     private float by;
     private float bz;
@@ -31,10 +41,14 @@ public class IdleBackgroundAnimation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Set's Transform position
         t.SetPositionAndRotation(new Vector3(bx,by+BobAmplitude*Mathf.Sin(br), bz), t.rotation);
+        //Converts euler coordinates to quaternion
         Quaternion q = Quaternion.Euler(t.eulerAngles.x, t.eulerAngles.y, Mathf.Sin(rr)*RotationAmplitude+rz);
-        //Debug.Log(t.rotation);
+        //Updates Transform rotation
         t.SetPositionAndRotation(t.position,q);
+
+        //Changes the Radians for Bob and Rotation
         br=(br+bobI)%(2*Mathf.PI);
         rr=(rr+rotationI)%(2*Mathf.PI);
     }
