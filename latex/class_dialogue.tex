@@ -1,18 +1,40 @@
 \hypertarget{class_dialogue}{}\doxysection{Dialogue Class Reference}
 \label{class_dialogue}\index{Dialogue@{Dialogue}}
+
+
+Contains one sequence of game dialogue, loaded from a .txt file  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_dialogue_a5c27f8568d0ae3998845624656f8a286}\label{class_dialogue_a5c27f8568d0ae3998845624656f8a286}} 
-void {\bfseries Reset} ()
-\item 
-\mbox{\Hypertarget{class_dialogue_a25f9adec322f211dee05801695eb09ec}\label{class_dialogue_a25f9adec322f211dee05801695eb09ec}} 
-void {\bfseries Load} (string txt\+File, int index)
-\item 
+void \mbox{\hyperlink{class_dialogue_a5c27f8568d0ae3998845624656f8a286}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em reset\textquotesingle{}s dialogue line to beginning of dialogue sequence \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialogue_a25f9adec322f211dee05801695eb09ec}{Load}} (string txt\+File, int index)
+\begin{DoxyCompactList}\small\item\em Separates a .txt file into the individual bits of dialogue. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_dialogue_af2378202bd23c83f9d5d1068cbc7c637}\label{class_dialogue_af2378202bd23c83f9d5d1068cbc7c637}} 
 Tuple$<$ string, string $>$ {\bfseries Next\+Line} ()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Contains one sequence of game dialogue, loaded from a .txt file 
+
+\mbox{\hyperlink{class_dialogue}{Dialogue}} Formatting Guide
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dialogue_a25f9adec322f211dee05801695eb09ec}\label{class_dialogue_a25f9adec322f211dee05801695eb09ec}} 
+\index{Dialogue@{Dialogue}!Load@{Load}}
+\index{Load@{Load}!Dialogue@{Dialogue}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void Dialogue.\+Load (\begin{DoxyParamCaption}\item[{string}]{txt\+File,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Separates a .txt file into the individual bits of dialogue. 
+
+returns$>$The current dialogue being spoken, where {\ttfamily Tuple.\+Item1} = Name and {\ttfamily Tuple.\+Item2} = \mbox{\hyperlink{class_dialogue}{Dialogue}}$<$/return$>$ 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
