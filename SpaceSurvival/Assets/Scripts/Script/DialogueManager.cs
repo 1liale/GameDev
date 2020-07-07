@@ -6,6 +6,7 @@ public class DialogueManager : MonoBehaviour
     private Dialogue dialogue;
     private bool playDialogue;
 
+    private bool leftSwipe = false, rightSwipe = false;
     private TypeEffect display;
 
     public void SetPlay(bool playDialogue)
@@ -31,12 +32,24 @@ public class DialogueManager : MonoBehaviour
         display = FindObjectOfType<TypeEffect>();
     }
 
+    public void setLeftSwipe()
+    {
+        leftSwipe = true;
+    }
+
+    public void setRightSwipe()
+    {
+        rightSwipe = true;
+    }
+
     void Update()
     {
         if (!playDialogue) return;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || leftSwipe || rightSwipe)
         {
+            leftSwipe = false;
+            rightSwipe = false;
             Tuple<string, string> line = dialogue.NextLine();
             if (line != null)
             {
