@@ -19,7 +19,6 @@ public class CharacterSelection : MonoBehaviour
         characterName = FindObjectOfType<NameDisplay>();
         dialogueManager = FindObjectOfType<DialogueManager>();
         displayDescription();
-        dialogueManager.setLeftSwipe();
 
         characterName.setName(names[curSelect]);
 
@@ -41,7 +40,6 @@ public class CharacterSelection : MonoBehaviour
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
         displayDescription();
-        dialogueManager.setLeftSwipe();
     }
 
     public void switchRight()
@@ -56,7 +54,6 @@ public class CharacterSelection : MonoBehaviour
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
         displayDescription();
-        dialogueManager.setRightSwipe();
     }
 
     private void displayDescription()
