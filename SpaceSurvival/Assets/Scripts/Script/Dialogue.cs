@@ -35,7 +35,7 @@ public class Dialogue
 
     public Tuple<string, string> NextLine()
     {
-        if (index >= lines.Length)
+        if (index >= lines.Length - 1)
             return null;
         return lines[index++];
     }
