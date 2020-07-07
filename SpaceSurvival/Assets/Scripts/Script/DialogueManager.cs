@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class DialogueManager : MonoBehaviour
         dialogue.Reset();
     }
 
+    private void checkCurScene()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     void Awake()
     {
         textDisplay = FindObjectOfType<TypeEffect>();
@@ -52,6 +59,9 @@ public class DialogueManager : MonoBehaviour
             textDisplay.beginType(text);
         }
         else
+        {
             playDialogue = false;
+            checkCurScene();
+        }
     }
 }
