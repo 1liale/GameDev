@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['namedisplay_12',['NameDisplay',['../class_name_display.html',1,'']]]
+  ['load_13',['Load',['../class_dialogue.html#a25f9adec322f211dee05801695eb09ec',1,'Dialogue']]]
 ];

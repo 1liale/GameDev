@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+///<summary>Manages Character Selection scene</summary>
 public class CharacterSelection : MonoBehaviour
 {
+    ///Characters to be selected from
     public GameObject[] characters;
+    ///Character names
     public string[] names;
     private int curSelect = 0;
 
@@ -28,6 +31,7 @@ public class CharacterSelection : MonoBehaviour
         } 
     }
 
+    ///Switches to left character
     public void switchLeft()
     {
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;
@@ -41,7 +45,7 @@ public class CharacterSelection : MonoBehaviour
         characterName.setName(names[curSelect]);
         displayDescription();
     }
-
+    ///Switches to right character
     public void switchRight()
     {
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;

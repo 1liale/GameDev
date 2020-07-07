@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['t_18',['t',['../class_bob.html#a5024161df08dc34cccb3aaa53630d251',1,'Bob.t()'],['../class_idle_background_animation.html#a31f942785a54c70c913a90b3e57d5cdc',1,'IdleBackgroundAnimation.t()']]],
-  ['typeeffect_19',['TypeEffect',['../class_type_effect.html',1,'']]]
+  ['quitgame_24',['quitGame',['../class_button_handler.html#a07245c2447eb087adf922440e58369bd',1,'ButtonHandler']]]
 ];
