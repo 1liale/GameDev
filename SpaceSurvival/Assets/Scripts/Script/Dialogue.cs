@@ -28,14 +28,13 @@ public class Dialogue
                     strLines[i].Split('@')[0] : lines[i - 1].Item1;
                 lines[i] = new Tuple<string, string>(name, text);
             }
-
         }
 
     }
 
     public Tuple<string, string> NextLine()
     {
-        if (index >= lines.Length)
+        if (index >= lines.Length - 1)
             return null;
         return lines[index++];
     }

@@ -1,22 +1,24 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     private Dialogue dialogue;
     private bool playDialogue;
-
-    private TypeEffect display;
+    private Text nameDisplay;
+    private TypeEffect textDisplay;
 
     public void SetPlay(bool playDialogue)
     {
         this.playDialogue = playDialogue;
+        if (playDialogue) Display();
     }
 
     public void LoadDialogue(Dialogue dialogue)
     {
-        this.dialogue = dialogue;
         dialogue.Reset();
+        this.dialogue = dialogue;
     }
 
     public void LoadDialogue(string txtFile, int index)
@@ -26,25 +28,30 @@ public class DialogueManager : MonoBehaviour
         dialogue.Reset();
     }
 
-    void Start()
+    void Awake()
     {
-        display = FindObjectOfType<TypeEffect>();
+        textDisplay = FindObjectOfType<TypeEffect>();
     }
 
     void Update()
     {
-        if (!playDialogue) return;
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Tuple<string, string> line = dialogue.NextLine();
-            if (line != null)
-            {
-                string name = line.Item1;
-                string text = line.Item2;
-                // display
-                display.beginType(text);
-            }
+            if (playDialogue) Display();
         }
+    }
+
+    void Display()
+    {
+        Tuple<string, string> line = dialogue.NextLine();
+        if (line != null)
+        {
+            string name = line.Item1;
+            string text = line.Item2;
+
+            textDisplay.beginType(text);
+        }
+        else
+            playDialogue = false;
     }
 }

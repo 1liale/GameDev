@@ -7,11 +7,14 @@ public class TypeEffect : MonoBehaviour
 {
     public float delay = 0.08f;
     public string fullText;
-    private string currentText = ""; 
+    private string currentText = "";
+    private IEnumerator current;
     
     public void beginType(string str)
     {
-        StartCoroutine(showText(str));
+        if (current != null)
+            StopCoroutine(current);
+        StartCoroutine(current = showText(str));
     } 
 
     IEnumerator showText(string str)
