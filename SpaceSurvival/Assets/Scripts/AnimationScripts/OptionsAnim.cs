@@ -9,9 +9,6 @@ public class OptionsAnim : MonoBehaviour
     private SpriteRenderer spaceship;
     private SpriteRenderer background;
 
-    private SpriteRenderer testing;
-
-    //public GameObject[] decors;
     private Color[] decorsColor;
 
     private int counter = 0;
