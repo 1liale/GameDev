@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ContinuousAudio : MonoBehaviour
 {
-   
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
