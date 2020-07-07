@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['active_3508',['active',['../class_unity_engine_1_1_timeline_1_1_control_playable_asset.html#a607cb05213fd968e6765442ec13aca51',1,'UnityEngine::Timeline::ControlPlayableAsset']]],
-  ['allowautocreate_3509',['allowAutoCreate',['../class_unity_engine_1_1_timeline_1_1_track_clip_type_attribute.html#add823037d2262aa6b8a4fb353437f61f',1,'UnityEngine::Timeline::TrackClipTypeAttribute']]],
-  ['atlas_3510',['atlas',['../class_t_m_pro_1_1_t_m_p___font_asset.html#a498534bae36d4dd9080e7ac93af657e0',1,'TMPro::TMP_FontAsset']]]
+  ['bobamplitude_35',['BobAmplitude',['../class_idle_background_animation.html#a096c9e119a2e3b39bd70a38598ec61f0',1,'IdleBackgroundAnimation']]],
+  ['bobtime_36',['BobTime',['../class_idle_background_animation.html#a05a2550f252021573faf342c22bd4e70',1,'IdleBackgroundAnimation']]]
 ];

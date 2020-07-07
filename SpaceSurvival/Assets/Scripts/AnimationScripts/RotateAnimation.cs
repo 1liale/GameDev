@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+///<summary>*Note: Deprecated. Use <c>IdleBackgroundAnimation</c></summary>
 public class RotateAnimation : MonoBehaviour
 {
     public Transform t;

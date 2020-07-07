@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['translateintoscene_8',['TranslateIntoScene',['../class_translate_into_scene.html',1,'']]]
+  ['namedisplay_12',['NameDisplay',['../class_name_display.html',1,'']]]
 ];

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
-<summary> class <c>Bob</c> transforms objects to simulate bobbing animation </summary>
+<summary>*Note: Deprecated. Use <seealso><c>IdleBackgroundAnimation</c></seealso><para>Class <c>Bob</c> transforms objects to simulate bobbing animation</para></summary>
 */
 public class Bob : MonoBehaviour
 {
+    ///<value>Transform component of the GameObject to animate</value>
     public Transform t;
+    ///<value>Amount of bobbing</value>
     public float amplitude;
     public float time;
     private float ox;
