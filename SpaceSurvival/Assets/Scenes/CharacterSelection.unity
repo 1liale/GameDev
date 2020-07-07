@@ -615,7 +615,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -866203965
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5658d676bee4d3d468f5647a86bd8be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -776,7 +776,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 376298892}
-          m_MethodName: onSwipe
+          m_MethodName: onHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -791,7 +791,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 376298892}
-          m_MethodName: offSwipe
+          m_MethodName: offHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -813,8 +813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914a38bc346c4942bf73d6e1a587419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointer1: {fileID: 1826873294}
-  pointer2: {fileID: 3847941874756147852}
+  pointer1: {fileID: 3847941874756147852}
+  pointer2: {fileID: 1826873294}
 --- !u!1 &529266016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,8 +1113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914a38bc346c4942bf73d6e1a587419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointer1: {fileID: 529266016}
-  pointer2: {fileID: 1267771839}
+  pointer1: {fileID: 1267771839}
+  pointer2: {fileID: 529266016}
 --- !u!114 &651981119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,7 +1133,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 651981118}
-          m_MethodName: onSwipe
+          m_MethodName: onHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 651981118}
-          m_MethodName: offSwipe
+          m_MethodName: offHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1500,7 +1500,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -866203965
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5658d676bee4d3d468f5647a86bd8be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2333,8 +2333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8914a38bc346c4942bf73d6e1a587419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointer1: {fileID: 1024589162}
-  pointer2: {fileID: 321530902}
+  pointer1: {fileID: 321530902}
+  pointer2: {fileID: 1024589162}
 --- !u!114 &1947032903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,7 +2353,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1947032902}
-          m_MethodName: onSwipe
+          m_MethodName: onHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2368,7 +2368,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1947032902}
-          m_MethodName: offSwipe
+          m_MethodName: offHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2640,7 +2640,12 @@ PrefabInstance:
     - target: {fileID: 7232837500883603017, guid: fbb286519a42d97458ad4eafb50845f5,
         type: 3}
       propertyPath: delay
-      value: 0.0375
+      value: 0.0075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7232837500883603017, guid: fbb286519a42d97458ad4eafb50845f5,
+        type: 3}
+      propertyPath: fullText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7232837500883603018, guid: fbb286519a42d97458ad4eafb50845f5,
         type: 3}

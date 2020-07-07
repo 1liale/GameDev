@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class TypeEffect : MonoBehaviour
 {
-    public float delay = 0.08f;
+    public float delay = 0.0075f;
     public string fullText;
     private string currentText = ""; 
+    IEnumerator curRoutine;
     
     public void beginType(string str)
     {
-        StartCoroutine(showText(str));
+        curRoutine = showText(str);
+        StartCoroutine(curRoutine);
     } 
 
-    IEnumerator showText(string str)
+    public IEnumerator showText(string str)
     {
         for(int i = 0; i < str.Length; i++)
         {

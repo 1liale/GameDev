@@ -9,8 +9,6 @@ public class CharacterSelection : MonoBehaviour
     public string[] names;
     private int curSelect = 0;
 
-    //private TypeEffect display;
-
     private NameDisplay characterName;
 
     DialogueManager dialogueManager; 
