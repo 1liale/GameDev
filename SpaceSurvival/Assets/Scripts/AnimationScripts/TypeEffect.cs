@@ -16,6 +16,14 @@ public class TypeEffect : MonoBehaviour
             StopCoroutine(current);
         StartCoroutine(current = showText(str));
     } 
+    ///wrap's text after <code>wrapSize</code> characters are displayed
+    public void beginType(string str, int wrapSize)
+    {
+        if (current != null){
+            StopCoroutine(current);
+        }
+        StartCoroutine(current = showText(str, wrapSize));
+    } 
 
     IEnumerator showText(string str)
     {
@@ -23,6 +31,19 @@ public class TypeEffect : MonoBehaviour
         {
             currentText = str.Substring(0,i+1);
             this.GetComponent<Text>().text = currentText;
+            yield return new WaitForSeconds(delay);
+        }
+    }
+    ///wrap's text after <code>wrapSize</code> characters are displayed
+    IEnumerator showText(string str, int wrapSize)
+    {
+        this.GetComponent<Text>().text = "";
+        for(int i = 0; i < str.Length; i++)
+        {
+            if ((i+1)%wrapSize==0) 
+                this.GetComponent<Text>().text+='\n';
+            //currentText = str.Substring(0,i+1);
+            this.GetComponent<Text>().text += str[i];
             yield return new WaitForSeconds(delay);
         }
     }

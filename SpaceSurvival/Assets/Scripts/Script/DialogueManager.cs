@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
+    ///Number of characters to display until text wraps around
+    public int wrapSize;
     private Dialogue dialogue;
     private bool playDialogue;
     private Text nameDisplay;
@@ -16,12 +18,14 @@ public class DialogueManager : MonoBehaviour
         if (playDialogue) Display();
     }
 
+    ///Loads a sequence of dialogue to be accessed later
     public void LoadDialogue(Dialogue dialogue)
     {
         dialogue.Reset();
         this.dialogue = dialogue;
     }
 
+    ///Loads a sequence of dialogue from a string
     public void LoadDialogue(string txtFile, int index)
     {
         dialogue = new Dialogue();
@@ -47,7 +51,6 @@ public class DialogueManager : MonoBehaviour
             if (playDialogue) Display();
         }
     }
-
     void Display()
     {
         Tuple<string, string> line = dialogue.NextLine();
@@ -55,8 +58,8 @@ public class DialogueManager : MonoBehaviour
         {
             string name = line.Item1;
             string text = line.Item2;
-
-            textDisplay.beginType(text);
+            if (wrapSize > 0) textDisplay.beginType(text, wrapSize);
+            else textDisplay.beginType(text);
         }
         else
         {
