@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quitgame_56',['quitGame',['../class_button_handler.html#a07245c2447eb087adf922440e58369bd',1,'ButtonHandler']]]
+  ['playgame_60',['playGame',['../class_button_handler.html#aede2aa54f9e324c8af6436bd887e5b73',1,'ButtonHandler']]]
 ];

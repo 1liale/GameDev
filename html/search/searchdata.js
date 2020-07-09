@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "bcdefilnopqrst",
+  0: "bcdefilnopqrstw",
   1: "bcdefinprst",
-  2: "lopqrs",
-  3: "bcnprt"
+  2: "blopqrs",
+  3: "bcnprtw"
 };
 
 var indexSectionNames =

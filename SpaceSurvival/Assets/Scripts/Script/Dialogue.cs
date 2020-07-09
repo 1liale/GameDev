@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-///<summary>Contains one sequence of game dialogue, loaded from a .txt file</summary><see href="">Dialogue Formatting Guide</see>
+///<summary>Contains one sequence of game dialogue, loaded from a .txt file</summary><a href="https://1liale.github.io/GameDev/html/dialogueFormattingManual.html">dialogue Formatting Guide</a>
 public class Dialogue
 {
     private Tuple<string, string>[] lines;

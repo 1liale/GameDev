@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['switchleft_59',['switchLeft',['../class_character_selection.html#a75ecfde72589136af0dbbc71d72a0e3b',1,'CharacterSelection']]],
-  ['switchright_60',['switchRight',['../class_character_selection.html#a4d36b88fb72dbffa3ba72e84007e24d9',1,'CharacterSelection']]]
+  ['reset_62',['Reset',['../class_dialogue.html#a5c27f8568d0ae3998845624656f8a286',1,'Dialogue']]],
+  ['returnmenu_63',['returnMenu',['../class_button_handler.html#a4f04d1fe412a3cd84e98b36678354517',1,'ButtonHandler']]]
 ];

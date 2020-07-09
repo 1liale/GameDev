@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load_51',['Load',['../class_dialogue.html#a25f9adec322f211dee05801695eb09ec',1,'Dialogue']]]
+  ['begintype_54',['beginType',['../class_type_effect.html#ae334aedc3d2dc12d611f03c696689901',1,'TypeEffect']]]
 ];
