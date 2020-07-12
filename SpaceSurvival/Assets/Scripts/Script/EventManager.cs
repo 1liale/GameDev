@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    private PlayerStats playerStats;
+
+    public event Action PhysicalInjury;
     public event Action OxygenLeak;
     public event Action DispenserMalfunc;
 
