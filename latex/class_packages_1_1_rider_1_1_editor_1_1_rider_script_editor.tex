@@ -1,0 +1,58 @@
+\hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor}{}\doxysection{Packages.\+Rider.\+Editor.\+Rider\+Script\+Editor Class Reference}
+\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor}\index{Packages.Rider.Editor.RiderScriptEditor@{Packages.Rider.Editor.RiderScriptEditor}}
+Inheritance diagram for Packages.\+Rider.\+Editor.\+Rider\+Script\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a8121a56659c06bf8a3695e6443961057}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a8121a56659c06bf8a3695e6443961057}} 
+{\bfseries Rider\+Script\+Editor} (\mbox{\hyperlink{interface_packages_1_1_rider_1_1_editor_1_1_i_discovery}{I\+Discovery}} discovery, \mbox{\hyperlink{interface_packages_1_1_rider_1_1_editor_1_1_i_generator}{I\+Generator}} project\+Generation)
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_ab67aa62d6561dd387b52e39e3bbba193}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_ab67aa62d6561dd387b52e39e3bbba193}} 
+void {\bfseries On\+G\+UI} ()
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a41543b63fec44cba19ec63db6d52cbc3}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a41543b63fec44cba19ec63db6d52cbc3}} 
+void {\bfseries Sync\+If\+Needed} (string\mbox{[}$\,$\mbox{]} added\+Files, string\mbox{[}$\,$\mbox{]} deleted\+Files, string\mbox{[}$\,$\mbox{]} moved\+Files, string\mbox{[}$\,$\mbox{]} moved\+From\+Files, string\mbox{[}$\,$\mbox{]} imported\+Files)
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_abb34135b5bd405c295aa0947e431b643}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_abb34135b5bd405c295aa0947e431b643}} 
+void {\bfseries Sync\+All} ()
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a31a75c6d68eb9ced6f93ae384491b33b}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a31a75c6d68eb9ced6f93ae384491b33b}} 
+void {\bfseries Initialize} (string editor\+Installation\+Path)
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a5275b5a4c038c1661f5aa27173a51a80}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a5275b5a4c038c1661f5aa27173a51a80}} 
+bool {\bfseries Open\+Project} (string path, int line, int column)
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a95ae6ac6342a23b1ec07668b9ff1dabc}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a95ae6ac6342a23b1ec07668b9ff1dabc}} 
+bool {\bfseries Try\+Get\+Installation\+For\+Path} (string editor\+Path, out Code\+Editor.\+Installation installation)
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a7dedf234a8bd96644cae85ad854962ed}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a7dedf234a8bd96644cae85ad854962ed}} 
+void {\bfseries Create\+Solution\+If\+Doesnt\+Exist} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_adf9f526d4291aee496f1d33d15e63c56}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_adf9f526d4291aee496f1d33d15e63c56}} 
+static bool {\bfseries Is\+Rider\+Installation} (string path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_ac447c3036b762b58e71df2e706166a86}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_ac447c3036b762b58e71df2e706166a86}} 
+Code\+Editor.\+Installation\mbox{[}$\,$\mbox{]} {\bfseries Installations} =$>$ m\+\_\+\+Discoverability.\+Path\+Callback()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a4cd617d3f36357b90ee33ffe9ef2a0b0}\label{class_packages_1_1_rider_1_1_editor_1_1_rider_script_editor_a4cd617d3f36357b90ee33ffe9ef2a0b0}} 
+static string {\bfseries Current\+Editor} =$>$ Editor\+Prefs.\+Get\+String(\char`\"{}k\+Scripts\+Default\+App\char`\"{})
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Space\+Survival/\+Library/\+Package\+Cache/com.\+unity.\+ide.\+rider@1.\+1.\+4/\+Rider/\+Editor/Rider\+Script\+Editor.\+cs\end{DoxyCompactItemize}
