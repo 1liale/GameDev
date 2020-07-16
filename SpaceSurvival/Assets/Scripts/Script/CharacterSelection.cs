@@ -44,6 +44,8 @@ public class CharacterSelection : MonoBehaviour
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
         displayDescription();
+
+        GameManager.Character = curSelect;
     }
     ///Switches to right character
     public void switchRight()
@@ -58,6 +60,8 @@ public class CharacterSelection : MonoBehaviour
         characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
         characterName.setName(names[curSelect]);
         displayDescription();
+
+        GameManager.Character = curSelect;
     }
 
     private void displayDescription()

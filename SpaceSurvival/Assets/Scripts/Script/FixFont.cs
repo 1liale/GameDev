@@ -8,7 +8,7 @@ public class FixFont : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i<fonts.Length; i++)
+        for (int i = 0; i < fonts.Length; i++)
         {
             fonts[i].material.mainTexture.filterMode = FilterMode.Point;
         }    

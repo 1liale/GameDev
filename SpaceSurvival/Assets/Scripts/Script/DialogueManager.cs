@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -27,12 +26,6 @@ public class DialogueManager : MonoBehaviour
         dialogue = new Dialogue();
         dialogue.Load(txtFile, index);
         dialogue.Reset();
-    }
-
-    private void checkCurScene()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void Awake()
@@ -61,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         else
         {
             playDialogue = false;
-            checkCurScene();
         }
     }
 }

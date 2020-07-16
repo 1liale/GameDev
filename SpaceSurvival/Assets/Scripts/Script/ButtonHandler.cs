@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 ///<summary>Stores functions for Buttons</summary>
 public class ButtonHandler : MonoBehaviour
@@ -26,22 +25,5 @@ public class ButtonHandler : MonoBehaviour
     {
         pointer1.GetComponent<SpriteRenderer>().enabled = false;
         pointer2.GetComponent<SpriteRenderer>().enabled = true;
-    }
-    ///Return's scene to IntroScreen
-    public void returnMenu()
-    {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene(0);
-    }
-    ///Switches scene to CharacterSelection Scene
-    public void playGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    ///Quit's game
-    public void quitGame()
-    {
-        Debug.Log("Quit!");
-        Application.Quit();
     }
 }
