@@ -11,15 +11,25 @@ public class ButtonHandler : MonoBehaviour
     ///GameObject of Arrow that appears when clicked
     public GameObject pointer2;
 
+    public static bool optionsTriggered = false;
+
     ///Displays onHover arrow
     public void onHover()
     {
-        pointer1.GetComponent<SpriteRenderer>().enabled = true;
+        if (!optionsTriggered || this.gameObject.name == "ReturnButton"){
+            if(optionsTriggered == false && this.gameObject.name == "ReturnButton")
+                return;
+            pointer1.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
     ///Displays default arrow
     public void offHover()
     {
-        pointer1.GetComponent<SpriteRenderer>().enabled = false;
+        if (!optionsTriggered || this.gameObject.name == "ReturnButton"){
+            if(optionsTriggered == false && this.gameObject.name == "ReturnButton")
+                return;
+            pointer1.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
     ///Displays onClicked arrow
     public void onClick()
@@ -43,5 +53,15 @@ public class ButtonHandler : MonoBehaviour
     {
         Debug.Log("Quit!");
         Application.Quit();
+    }
+
+    public void setOptionsOn()
+    {
+        optionsTriggered = true;
+    }
+
+    public void setOptionsOff()
+    {
+        optionsTriggered = false;
     }
 }
