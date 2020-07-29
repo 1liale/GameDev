@@ -36,7 +36,7 @@ public class CharacterController2D : MonoBehaviour
 	void Update()
 	{
 		// When left mouse button is pressed down
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButton(0))
         {
 			// Character starts walking
 			animator.SetBool("walk", true);
