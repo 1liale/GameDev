@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 ///<summary>Manages Character Selection scene</summary>
 public class CharacterSelection : MonoBehaviour
@@ -10,7 +11,8 @@ public class CharacterSelection : MonoBehaviour
     public GameObject[] characters;
     ///Character names
     public string[] names;
-    private int curSelect = 0;
+    
+    private static int curSelect = 0;
 
     private NameDisplay characterName;
 
@@ -19,16 +21,19 @@ public class CharacterSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterName = FindObjectOfType<NameDisplay>();
-        dialogueManager = FindObjectOfType<DialogueManager>();
-        displayDescription();
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            characterName = FindObjectOfType<NameDisplay>();
+            dialogueManager = FindObjectOfType<DialogueManager>();
+            displayDescription();
+            characterName.setName(names[curSelect]);
+        }
 
-        characterName.setName(names[curSelect]);
-
-        for(int i = 1; i < characters.Length; i++)
+        for(int i = 0; i < characters.Length; i++)
         {
             characters[i].GetComponent<SpriteRenderer>().enabled = false;
-        } 
+        }
+        characters[curSelect].GetComponent<SpriteRenderer>().enabled = true; 
     }
 
     ///Switches to left character
@@ -64,5 +69,14 @@ public class CharacterSelection : MonoBehaviour
     {
         dialogueManager.LoadDialogue("CharSelection", curSelect);
         dialogueManager.SetPlay(true);
+    }
+
+    public static void checkCurScene()
+    {
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log(curSelect);
+        }
     }
 }
