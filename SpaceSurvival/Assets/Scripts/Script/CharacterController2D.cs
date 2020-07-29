@@ -36,7 +36,7 @@ public class CharacterController2D : MonoBehaviour
 	void Update()
 	{
 		// When left mouse button is pressed down
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButtonDown(0))
         {
 			// Character starts walking
 			animator.SetBool("walk", true);
@@ -64,22 +64,23 @@ public class CharacterController2D : MonoBehaviour
 			}
 			
         }
-
 		else 
 		{
 			// Character stops walking
 			animator.SetBool("walk", false);
 			isWalking = false;
 		}
+
+		
 	}
 	
 	void FixedUpdate()
 	{
 
-		if(((Vector2)transform.position != userInput) && isWalking)
-    	{
-       		transform.position = Vector2.MoveTowards(transform.position, userInput, speed * Time.deltaTime);
-    	}
+		// if(((Vector2)transform.position != userInput) && isWalking)
+    	// {
+       		transform.position = Vector2.MoveTowards(transform.position, new Vector2(userInput.x,transform.position.y), speed * Time.deltaTime);
+    	// }
 
 		if (moveRight > 0 && !facingRight)
 		{
