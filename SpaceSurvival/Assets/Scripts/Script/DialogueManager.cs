@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -55,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         else
         {
             playDialogue = false;
-            CharacterSelection.checkCurScene();
         }
     }
 }
