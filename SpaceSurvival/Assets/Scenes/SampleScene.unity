@@ -337,7 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.4
-  gap: 0.5
   animator: {fileID: 0}
 --- !u!1 &198737757
 GameObject:

@@ -48,8 +48,8 @@ public class CharacterController2D : MonoBehaviour
 			userInput = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			
 			// Prints mouse x and object's current x coordinate
-			Debug.Log(userInput.x);
-			Debug.Log(transform.position.x);
+			//Debug.Log(userInput.x);
+			//Debug.Log(transform.position.x);
 
 			// Checks if mouse click is to the right of the object
 			if(userInput.x > transform.position.x)
