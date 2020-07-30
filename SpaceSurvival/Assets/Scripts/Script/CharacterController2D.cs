@@ -48,8 +48,8 @@ public class CharacterController2D : MonoBehaviour
 			userInput = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			
 			// Prints mouse x and object's current x coordinate
-			Debug.Log(userInput.x);
-			Debug.Log(transform.position.x);
+			//Debug.Log(userInput.x);
+			//Debug.Log(transform.position.x);
 
 			// Checks if mouse click is to the right of the object
 			if(userInput.x > transform.position.x)
@@ -64,22 +64,23 @@ public class CharacterController2D : MonoBehaviour
 			}
 			
         }
-
 		else 
 		{
 			// Character stops walking
 			animator.SetBool("walk", false);
 			isWalking = false;
 		}
+
+		
 	}
 	
 	void FixedUpdate()
 	{
 
-		if(((Vector2)transform.position != userInput) && isWalking)
-    	{
-       		transform.position = Vector2.MoveTowards(transform.position, userInput, speed * Time.deltaTime);
-    	}
+		// if(((Vector2)transform.position != userInput) && isWalking)
+    	// {
+       		transform.position = Vector2.MoveTowards(transform.position, new Vector2(userInput.x,transform.position.y), speed * Time.deltaTime);
+    	// }
 
 		if (moveRight > 0 && !facingRight)
 		{
