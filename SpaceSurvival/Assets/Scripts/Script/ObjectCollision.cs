@@ -15,7 +15,8 @@ public class ObjectCollision : MonoBehaviour
     {
         if(collider.gameObject.tag == "Door")
         {
-             Debug.Log("Door zone entered");
+            Debug.Log("Door zone entered");
+            anim = collider.GetComponent<Animator>();
             if(Input.GetKey(KeyCode.H))
             {
                 Debug.Log("Door open");
