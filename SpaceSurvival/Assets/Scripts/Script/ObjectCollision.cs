@@ -11,12 +11,20 @@ public class ObjectCollision : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Door")
+        {
+            Debug.Log("Door zone entered");
+            anim = collider.GetComponent<Animator>();
+        }
+    }
+
     void OnTriggerStay2D(Collider2D collider)
     {
         if(collider.gameObject.tag == "Door")
         {
             Debug.Log("Door zone entered");
-            anim = collider.GetComponent<Animator>();
             if(Input.GetKey(KeyCode.H))
             {
                 Debug.Log("Door open");
