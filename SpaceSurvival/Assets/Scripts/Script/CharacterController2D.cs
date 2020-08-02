@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Cinemachine;
 
 public class CharacterController2D : MonoBehaviour
 {					
@@ -11,11 +12,9 @@ public class CharacterController2D : MonoBehaviour
 	private bool facingRight = false;
 
 	private Rigidbody2D rigidbody;
+    private Animator animator;
 	private Vector2 velocity;
 	private Vector2 userInput;
-
-
-	public Animator animator;
 
 	void Start()
 	{
@@ -32,6 +31,16 @@ public class CharacterController2D : MonoBehaviour
 		toScale.x *= -1;
 		transform.localScale = toScale;
 	}
+
+    public void Teleport(Vector3 newPos)
+    {
+        Vector2 deltaPos = newPos - transform.position;
+        transform.position = newPos;
+        userInput += deltaPos;
+        CinemachineVirtualCamera camera =
+            FindObjectOfType<CinemachineVirtualCamera>();
+        camera.OnTargetObjectWarped(transform, deltaPos);
+    }
 
 	void Update()
 	{
