@@ -11,11 +11,9 @@ public class CharacterController2D : MonoBehaviour
 	private bool facingRight = false;
 
 	private Rigidbody2D rigidbody;
+    private Animator animator;
 	private Vector2 velocity;
 	private Vector2 userInput;
-
-
-	public Animator animator;
 
 	void Start()
 	{
@@ -32,6 +30,12 @@ public class CharacterController2D : MonoBehaviour
 		toScale.x *= -1;
 		transform.localScale = toScale;
 	}
+
+    public void Teleport(Vector2 newPos)
+    {
+        userInput += newPos - (Vector2)transform.position;
+        transform.position = newPos;
+    }
 
 	void Update()
 	{

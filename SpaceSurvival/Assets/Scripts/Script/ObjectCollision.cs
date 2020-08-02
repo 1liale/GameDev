@@ -13,7 +13,7 @@ public class ObjectCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Door")
+        if (collider.tag == "Door")
         {
             Debug.Log("Door zone entered");
             anim = collider.GetComponent<Animator>();
@@ -22,7 +22,7 @@ public class ObjectCollision : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Door")
+        if(collider.tag == "Door")
         {
             Debug.Log("Door zone entered");
             if(Input.GetKey(KeyCode.H))
@@ -35,6 +35,9 @@ public class ObjectCollision : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        anim.SetBool("openDoor",false);
+        if (collider.tag == "Door")
+        {
+            anim.SetBool("openDoor", false);
+        }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - music
   - Door
+  - Portal
   layers:
   - Default
   - TransparentFX
