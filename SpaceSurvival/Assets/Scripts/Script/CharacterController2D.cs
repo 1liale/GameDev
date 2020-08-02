@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using Cinemachine;
 
 public class CharacterController2D : MonoBehaviour
 {					
@@ -31,10 +32,14 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = toScale;
 	}
 
-    public void Teleport(Vector2 newPos)
+    public void Teleport(Vector3 newPos)
     {
-        userInput += newPos - (Vector2)transform.position;
+        Vector2 deltaPos = newPos - transform.position;
         transform.position = newPos;
+        userInput += deltaPos;
+        CinemachineVirtualCamera camera =
+            FindObjectOfType<CinemachineVirtualCamera>();
+        camera.OnTargetObjectWarped(transform, deltaPos);
     }
 
 	void Update()
