@@ -1,6 +1,5 @@
 # GameDev
-Repository made to sync files for a Space Survival game
-Type of game: 2D pixel game 
+Repository made to sync files for Game Development in Unity
 
 ------------------------------------------------------------
 
