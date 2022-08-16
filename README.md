@@ -2,6 +2,7 @@
 Repository made to sync files for Game Development in Unity
 
 ![Current Project: Alpha¢Torus](SpaceSurvival/Assets/Resources/Sprites/Background/Floor1.png)
+Unity version: `2021.3.8f1`
 
 ## For Developers:
 1. Pick from github issues a task to work on
