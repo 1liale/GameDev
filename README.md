@@ -1,6 +1,8 @@
 # GameDev
 Repository made to sync files for Game Development in Unity
 
+![Current Project: Alpha¢Torus](SpaceSurvival/Assets/Resources/Sprites/Background/Floor1.png)
+
 ## For Developers:
 1. Pick from github issues a task to work on
 2. Create a new branch off of master for each new task and create a PR once a task is complete
