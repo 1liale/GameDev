@@ -170,7 +170,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0681605, y: 1}
+    m_SensorSize: {x: 2.0671642, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -315,12 +315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293fd2b68a203c249869e7c9347a6a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &905062929 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9145335630539366835, guid: 114eb483eb8d3b64b9e095cb5bd0cd20,
-    type: 3}
-  m_PrefabInstance: {fileID: 9145335630689887358}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &905062930
 Rigidbody2D:
   serializedVersion: 4
@@ -342,20 +336,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!114 &905062931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905062927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ddbe930bcc64f608d0e7d475a5d5a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  EnableVerticalMovement: 0
 --- !u!1 &968154179
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,20 +865,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9145335630539366834, guid: 114eb483eb8d3b64b9e095cb5bd0cd20,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 905062929}
-    - target: {fileID: 9145335630539366834, guid: 114eb483eb8d3b64b9e095cb5bd0cd20,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9145335630539366835, guid: 114eb483eb8d3b64b9e095cb5bd0cd20,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9145335630539366836, guid: 114eb483eb8d3b64b9e095cb5bd0cd20,
         type: 3}
