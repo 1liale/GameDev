@@ -261,8 +261,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145335630539366837}
+  - component: {fileID: 8572891628656461622}
   - component: {fileID: 9145335630539366835}
   - component: {fileID: 7625579695837856787}
+  - component: {fileID: 7146020502509864168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -286,6 +288,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &8572891628656461622
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145335630539366836}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
 --- !u!95 &9145335630539366835
 Animator:
   serializedVersion: 4
@@ -315,11 +338,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 9145335630539366836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ddbe930bcc64f608d0e7d475a5d5a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a32c2f9498cb424e95804cfa51fe165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  EnableVerticalMovement: 0
+  enableVerticalMovement: 0
+--- !u!114 &7146020502509864168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145335630539366836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293fd2b68a203c249869e7c9347a6a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9145335630642755587
 GameObject:
   m_ObjectHideFlags: 0
