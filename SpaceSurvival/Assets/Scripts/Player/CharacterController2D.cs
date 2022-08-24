@@ -1,45 +1,35 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
-using System.Collections.Generic;
+﻿using System;
+using UnityEngine;
 using Cinemachine;
 
 public class CharacterController2D : MonoBehaviour
-{					
-	public float speed = 0.4f;
-
-	private int moveRight = 0;
-	private bool isWalking = false;
-	private bool facingRight = false;
-
+{
 	private Rigidbody2D rigidbody;
     private Animator animator;
-	private Vector2 velocity;
-	private Vector2 userInput;
+
+	public float speed = 1f;
+	// Allow character to move up and down
+	public bool enableVerticalMovement = false;
+
+	private bool isWalking = false;
+
+	private Vector2 target;
 
 	void Start()
 	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
-		userInput = transform.position;
+		target = transform.position;
 	}
 
-	// Helper method to change the direction that the character is facing
-	private void flip()
-	{
-		facingRight = !facingRight;
-		Vector3 toScale = transform.localScale;
-		toScale.x *= -1;
-		transform.localScale = toScale;
-	}
-
-    public void Teleport(Vector3 newPos)
+    public void Teleport(Vector3 pos)
     {
-        Vector2 deltaPos = newPos - transform.position;
-        transform.position = newPos;
-        userInput += deltaPos;
+        Vector2 delta = pos - transform.position;
+        transform.position = pos;
+        //target += delta;
         CinemachineVirtualCamera camera =
             FindObjectOfType<CinemachineVirtualCamera>();
-        camera.OnTargetObjectWarped(transform, deltaPos);
+        camera.OnTargetObjectWarped(transform, delta);
     }
 
 	void Update()
@@ -54,23 +44,11 @@ public class CharacterController2D : MonoBehaviour
 			// Stores mouse's position 
             Debug.Log("Mouse button clicked");
 			Debug.Log(animator.GetBool("walk"));
-			userInput = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			target = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			
 			// Prints mouse x and object's current x coordinate
-			//Debug.Log(userInput.x);
+			//Debug.Log(target.x);
 			//Debug.Log(transform.position.x);
-
-			// Checks if mouse click is to the right of the object
-			if(userInput.x > transform.position.x)
-			{
-				moveRight = -1;
-			} 
-
-			// Checks if mouse click is to the left of the object
-			else if(userInput.x < transform.position.x)
-			{
-				moveRight = 1;
-			}
 			
         }
 		else 
@@ -85,22 +63,44 @@ public class CharacterController2D : MonoBehaviour
 	
 	void FixedUpdate()
 	{
+		Vector3 pos = transform.position;
+		Vector3 scale = transform.localScale;
 
-		// if(((Vector2)transform.position != userInput) && isWalking)
-    	// {
-       		transform.position = Vector2.MoveTowards(transform.position, new Vector2(userInput.x,transform.position.y), speed * Time.deltaTime);
-    	// }
+		/*
+		pos = Vector2.MoveTowards(pos, target, speed * Time.fixedDeltaTime);
+		int dir = Math.Sign(target.x - pos.x);
+		if (dir != 0) {
+			scale.x = dir * Math.Abs(scale.x);
+		}
+		*/
 
-		if (moveRight > 0 && !facingRight)
+		if (Input.GetKey("w"))
 		{
-			flip();
+			pos.y += speed * Time.fixedDeltaTime;
+		}
+		if (Input.GetKey("a"))
+		{
+			pos.x -= speed * Time.fixedDeltaTime;
+			scale.x = -Math.Abs(scale.x); //Face object leftwards
+		}
+		if (Input.GetKey("s"))
+		{
+			pos.y -= speed * Time.fixedDeltaTime;
+		}
+		if (Input.GetKey("d"))
+		{
+			pos.x += speed * Time.fixedDeltaTime;
+			scale.x = +Math.Abs(scale.x); //Face object rightwards
 		}
 
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if (moveRight < 0 && facingRight)
+		//Cancel vertical movement
+		if (!enableVerticalMovement)
 		{
-			flip();
+			pos.y = transform.position.y;
 		}
+
+		transform.position = pos;
+		transform.localScale = scale;
 	}
 
 }
