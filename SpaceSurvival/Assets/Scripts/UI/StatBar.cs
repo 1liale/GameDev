@@ -9,7 +9,7 @@ public class StatBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void setMax(float value)
+    public void SetMax(float value)
     {
         slider.maxValue = value;
         slider.value = value;
@@ -17,7 +17,7 @@ public class StatBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void setValue(float value)
+    public void SetValue(float value)
     {
         slider.value = value;
 

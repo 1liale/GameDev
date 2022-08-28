@@ -263,8 +263,9 @@ GameObject:
   - component: {fileID: 9145335630539366837}
   - component: {fileID: 8572891628656461622}
   - component: {fileID: 9145335630539366835}
-  - component: {fileID: 7625579695837856787}
   - component: {fileID: 7146020502509864168}
+  - component: {fileID: 7625579695837856787}
+  - component: {fileID: 6571073893468685237}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -329,6 +330,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7146020502509864168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145335630539366836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293fd2b68a203c249869e7c9347a6a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7625579695837856787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   enableVerticalMovement: 0
---- !u!114 &7146020502509864168
+--- !u!114 &6571073893468685237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,9 +365,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9145335630539366836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293fd2b68a203c249869e7c9347a6a19, type: 3}
+  m_Script: {fileID: 11500000, guid: df3146b65b8ff40f89c0e24fa8015472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  foodBar: {fileID: 0}
+  energyBar: {fileID: 0}
 --- !u!1 &9145335630642755587
 GameObject:
   m_ObjectHideFlags: 0

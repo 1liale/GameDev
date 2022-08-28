@@ -1,26 +1,80 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatsController : MonoBehaviour
 {
+    public delegate void StatUpdateHandler(float value);
 
-    public int maxFood = 100;
-    public int currentFood;
+    public event StatUpdateHandler HealthUpdate;
+    public event StatUpdateHandler FoodUpdate;
+    public event StatUpdateHandler EnergyUpdate;
 
-    public StatBar Foodbar;
+    public StatBar healthBar;
+    public StatBar foodBar;
+    public StatBar energyBar;
 
-    // Start is called before the first frame update
-    void Start()
+    public PlayerStats stats;
+
+    private float deltaHealth;
+    private float deltaHeal;
+    private float deltaFood;
+    private float deltaEnergy;
+
+    void Awake()
     {
-        currentFood = maxFood;
-        Foodbar.setMax(maxFood);
+        stats = new PlayerStats();
+
+        HealthUpdate += healthBar.SetValue;
+        FoodUpdate += foodBar.SetValue;
+        EnergyUpdate += energyBar.SetValue;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        currentFood -= 1;
-        Foodbar.setValue(currentFood);
+        float health = stats.Health;
+        float food = stats.Food;
+        float energy = stats.Energy;
+
+        food -= deltaFood * Time.deltaTime;
+        food = Mathf.Clamp(food, 0f, 1f);
+
+        energy -= deltaEnergy * Time.deltaTime /
+            Mathf.Max(Mathf.Sqrt(food), 0.01f);
+        energy = Mathf.Clamp(energy, 0f, 1f);
+
+        health += deltaHeal * Time.deltaTime;
+        health -= deltaHealth * Time.deltaTime /
+            Mathf.Max(Mathf.Sqrt(food), 0.01f) /
+            Mathf.Max(Mathf.Sqrt(energy), 0.01f);
+        health = Mathf.Clamp(health, 0f, 1f);
+
+        stats.Health = health;
+        stats.Food = food;
+        stats.Energy = energy;
+
+        HealthUpdate?.Invoke(stats.Health);
+        FoodUpdate?.Invoke(stats.Food);
+        EnergyUpdate?.Invoke(stats.Energy);
+    }
+
+    static void Write(StreamWriter writer)
+    {
+        writer.WriteLine("Test");
+        writer.Close();
+    }
+
+    static void Read(StreamReader reader)
+    {
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
+    }
+    
+    void OnDestroy()
+    {
+        HealthUpdate -= healthBar.SetValue;
+        FoodUpdate -= foodBar.SetValue;
+        EnergyUpdate -= energyBar.SetValue;
     }
 }
