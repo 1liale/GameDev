@@ -3,21 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TypeEffect : MonoBehaviour
+public class TextDisplay : MonoBehaviour
 {
+    private Text text;
+
     public float delay = 0.08f;
     public string fullText;
     private string currentText = "";
     private IEnumerator current;
+
+    void Awake()
+    {
+        text = gameObject.GetComponent<Text>();
+        DialogueManager.textUpdate += BeginType;
+    }
+
+    void OnDestroy()
+    {
+        DialogueManager.textUpdate -= BeginType;
+    }
     
-    public void beginType(string str)
+    public void BeginType(string str)
     {
         if (current != null)
             StopCoroutine(current);
-        StartCoroutine(current = showText(str));
+        StartCoroutine(current = ShowText(str));
     } 
 
-    IEnumerator showText(string str)
+    IEnumerator ShowText(string str)
     {
         for(int i = 0; i < str.Length; i++)
         {

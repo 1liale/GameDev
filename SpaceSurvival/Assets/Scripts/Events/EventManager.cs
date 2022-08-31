@@ -5,9 +5,9 @@ public class EventManager : MonoBehaviour
 {
     private PlayerStats playerStats;
 
-    public event Action PhysicalInjury;
-    public event Action OxygenLeak;
-    public event Action DispenserMalfunc;
+    public event Action physicalInjury;
+    public event Action oxygenLeak;
+    public event Action dispenserMalfunc;
 
     // Start is called before the first frame update
     void Start()

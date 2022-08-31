@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class NameDisplay : MonoBehaviour
 {
-    Text txt;
+    private Text text;
 
-    // Use this for initialization
-    void Start () 
+    void Awake()
     {
-        txt = gameObject.GetComponent<Text>(); 
-        txt.text="Veteran";
+        text = GetComponent<Text>(); 
+        DialogueManager.nameUpdate += SetName;
     }
-    public void setName(string str)
+
+    void OnDestroy()
     {
-        txt.text = str;
+        DialogueManager.nameUpdate -= SetName;
+    }
+
+    public void SetName(string name)
+    {
+        text.text = name;
     }
 }

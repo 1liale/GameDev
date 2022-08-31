@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -8,75 +6,71 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     ///Characters to be selected from
-    public GameObject[] characters;
-    ///Character names
     public string[] names;
-    
-    private static int curSelect = 0;
+    public Text nameDisplay;
 
-    private NameDisplay characterName;
+    private DialogueManager dialogueManager;
+    private CharacterManager characterManager;
 
-    DialogueManager dialogueManager; 
+    void Awake()
+    {
+        dialogueManager = DialogueManager.Instance;
+        characterManager = CharacterManager.Instance;
+        CharacterManager.characterUpdate += DisplayName;
+        CharacterManager.characterUpdate += DisplayDescription;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        characterManager.ActiveCharacter = 0;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            characterName = FindObjectOfType<NameDisplay>();
-            dialogueManager = FindObjectOfType<DialogueManager>();
-            displayDescription();
-            characterName.setName(names[curSelect]);
-        }
-
-        for(int i = 0; i < characters.Length; i++)
-        {
-            characters[i].GetComponent<SpriteRenderer>().enabled = false;
-        }
-        characters[curSelect].GetComponent<SpriteRenderer>().enabled = true; 
-    }
-
-    ///Switches to left character
-    public void switchLeft()
-    {
-        characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;
-
-        if(curSelect - 1 >= 0)
-            curSelect -= 1;
-        else
-            curSelect = characters.Length - 1;
-        
-        characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
-        characterName.setName(names[curSelect]);
-        displayDescription();
-    }
-    ///Switches to right character
-    public void switchRight()
-    {
-        characters[curSelect].GetComponent<SpriteRenderer>().enabled = false;
-
-        if(curSelect + 1 == characters.Length)
-            curSelect = 0;
-        else
-            curSelect += 1;
-
-        characters[curSelect].GetComponent<SpriteRenderer>().enabled = true;
-        characterName.setName(names[curSelect]);
-        displayDescription();
-    }
-
-    private void displayDescription()
-    {
-        dialogueManager.LoadDialogue("CharSelection", curSelect);
-        dialogueManager.SetPlay(true);
-    }
-
-    public static void checkCurScene()
-    {
-        if(SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Debug.Log(curSelect);
+            dialogueManager.Pause();
+            Debug.Log(characterManager.ActiveCharacter);
+            SceneManager.LoadScene("Level2", LoadSceneMode.Single);
         }
     }
+
+    void OnDestroy()
+    {
+        CharacterManager.characterUpdate -= DisplayName;
+        CharacterManager.characterUpdate -= DisplayDescription;
+    }
+
+    private void DisplayName(int character)
+    {
+        nameDisplay.text = names[character];
+    }
+
+    private void DisplayDescription(int character)
+    {
+        dialogueManager.LoadDialogue("CharSelection", character);
+        dialogueManager.Play();
+    }
+
+    ///Switches to character to the left
+    public void SwitchLeft()
+    {
+        int character = (int)characterManager.ActiveCharacter;
+        if (--character < 0)
+            character = names.Length - 1;
+
+        characterManager.ActiveCharacter = (CharacterManager.Character)character;
+    }
+
+    ///Switches to character to the right
+    public void SwitchRight()
+    {
+        int character = (int)characterManager.ActiveCharacter;
+        if (++character >= names.Length)
+            character = 0;
+
+        characterManager.ActiveCharacter = (CharacterManager.Character)character;
+    }
+
 }
