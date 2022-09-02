@@ -1,19 +1,56 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Dialogue dialogue;
-    private bool playDialogue;
-    private Text nameDisplay;
-    private TypeEffect textDisplay;
+    private static DialogueManager instance;
+    public static DialogueManager Instance {
+        get { return instance; }
+    }
 
-    public void SetPlay(bool playDialogue)
+    public static event Action<string> nameUpdate;
+    public static event Action<string> textUpdate;
+
+    private Dialogue dialogue;
+    private bool onPlay;
+
+    void Awake()
     {
-        this.playDialogue = playDialogue;
-        if (playDialogue) Display();
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            //Debug.LogError("Duplicate DialogueManager", this);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (dialogue != null && onPlay) Display();
+        }
+    }
+
+    void OnDestroy()
+    {
+        instance = null;
+    }
+
+    public void Play()
+    {
+        onPlay = true;
+        if (dialogue != null) Display();
+    }
+
+    public void Pause()
+    {
+        onPlay = false;
     }
 
     public void LoadDialogue(Dialogue dialogue)
@@ -29,19 +66,6 @@ public class DialogueManager : MonoBehaviour
         dialogue.Reset();
     }
 
-    void Awake()
-    {
-        textDisplay = FindObjectOfType<TypeEffect>();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (playDialogue) Display();
-        }
-    }
-
     void Display()
     {
         Tuple<string, string> line = dialogue.NextLine();
@@ -50,12 +74,12 @@ public class DialogueManager : MonoBehaviour
             string name = line.Item1;
             string text = line.Item2;
 
-            textDisplay.beginType(text);
+            nameUpdate?.Invoke(name);
+            textUpdate?.Invoke(text);
         }
         else
         {
-            playDialogue = false;
-            CharacterSelection.checkCurScene();
+            onPlay = false;
         }
     }
 }

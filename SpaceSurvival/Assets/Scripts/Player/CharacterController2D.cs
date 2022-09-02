@@ -15,10 +15,14 @@ public class CharacterController2D : MonoBehaviour
 
 	private Vector2 target;
 
-	void Start()
-	{
+	void Awake()
+    {
 		rigidbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
+    }
+
+	void Start()
+	{
 		target = transform.position;
 	}
 
@@ -45,11 +49,6 @@ public class CharacterController2D : MonoBehaviour
             Debug.Log("Mouse button clicked");
 			Debug.Log(animator.GetBool("walk"));
 			target = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			
-			// Prints mouse x and object's current x coordinate
-			//Debug.Log(target.x);
-			//Debug.Log(transform.position.x);
-			
         }
 		else 
 		{
@@ -68,9 +67,9 @@ public class CharacterController2D : MonoBehaviour
 
 		/*
 		pos = Vector2.MoveTowards(pos, target, speed * Time.fixedDeltaTime);
-		int dir = Math.Sign(target.x - pos.x);
+		int dir = Mathf.Sign(target.x - pos.x);
 		if (dir != 0) {
-			scale.x = dir * Math.Abs(scale.x);
+			scale.x = dir * Mathf.Abs(scale.x);
 		}
 		*/
 
@@ -81,7 +80,7 @@ public class CharacterController2D : MonoBehaviour
 		if (Input.GetKey("a"))
 		{
 			pos.x -= speed * Time.fixedDeltaTime;
-			scale.x = -Math.Abs(scale.x); //Face object leftwards
+			scale.x = -Mathf.Abs(scale.x); //Face object leftwards
 		}
 		if (Input.GetKey("s"))
 		{
@@ -90,7 +89,7 @@ public class CharacterController2D : MonoBehaviour
 		if (Input.GetKey("d"))
 		{
 			pos.x += speed * Time.fixedDeltaTime;
-			scale.x = +Math.Abs(scale.x); //Face object rightwards
+			scale.x = +Mathf.Abs(scale.x); //Face object rightwards
 		}
 
 		//Cancel vertical movement
